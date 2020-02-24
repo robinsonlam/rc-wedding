@@ -1,0 +1,37 @@
+/* Font Styles */
+
+body { font-family: 'Josefin Sans'; }
+
+h1 { font-size: 2.00em; font-weight: bold; margin-bottom: 0.67em; font-family: 'Raleway'; }
+h2 { font-size: 1.50em; font-weight: bold; margin-bottom: 0.67em }
+h3 { font-size: 1.17em; font-weight: bold; margin-bottom: 0.67em }
+h4 { font-size: 1.00em; font-weight: bold; }
+h5 { font-size: 0.83em; font-weight: bold; }
+h6 { font-size: 0.67em; font-weight: bold; }
+
+p { margin-bottom: 1em; line-height: 1.6em; }
+
+/* Page Container */
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.container {
+    height: 100%;
+    max-width: 768px;
+    padding: 0 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.textSection {
+    margin-bottom: 20px;
+}

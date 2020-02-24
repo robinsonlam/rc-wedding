@@ -1,0 +1,31 @@
+{
+  "name": "rc-wedding",
+  "version": "1.0.0",
+  "description": "Christy & Rob's Wedding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server --config ./config/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinsonlam/rc-wedding.git"
+  },
+  "author": "Robinson Lam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinsonlam/rc-wedding/issues"
+  },
+  "homepage": "https://github.com/robinsonlam/rc-wedding#readme",
+  "dependencies": {
+    "fullpage.js": "^3.0.8",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}

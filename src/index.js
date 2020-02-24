@@ -1,9 +1,13 @@
 import fullpage from 'fullpage.js';
 
+// STyles
+import resetStyles from './styles/reset.css';
+import styles from './styles/main.css';
+
 console.log("Fullpage.js Initialised:", fullpage);
 
 // Initializing it
-var fullPageInstance = new fullpage('#myFullpage', {
+var fullPageInstance = new fullpage('#fullpage', {
     navigation: true,
-    sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
+    sectionsColor:['#ffffff', '#d1e3ff', '#ffffff', 'd1e3ff', '#ffffff', 'd1e3ff']
 });
