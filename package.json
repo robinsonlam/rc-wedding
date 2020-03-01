@@ -19,6 +19,7 @@
   "homepage": "https://github.com/robinsonlam/rc-wedding#readme",
   "dependencies": {
     "fullpage.js": "^3.0.8",
+    "jquery": "^3.4.1",
     "webpack-dev-server": "^3.10.1"
   },
   "devDependencies": {
