@@ -1,5 +1,5 @@
 import fullpage from 'fullpage.js';
-import { $ } from 'jquery';
+import $ from 'jquery';
 
 // Styles
 import resetStyles from './styles/reset.css';
@@ -24,9 +24,10 @@ $('#submit-form').on('click', function(e) {
     url: url,
     method: "GET",
     dataType: "json",
-    data: $form.serializeObject()
-  }).success(
-    // do something
-  );
+    data: $form.serialize(),
+    success: function() {
+        alert("form sent")
+    }
+  });
 
 })
