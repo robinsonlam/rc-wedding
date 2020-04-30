@@ -20,11 +20,18 @@
   "homepage": "https://github.com/robinsonlam/rc-wedding#readme",
   "dependencies": {
     "fullpage.js": "^3.0.8",
+<<<<<<< HEAD
     "jquery": "^3.4.1",
+=======
+    "jquery": "^3.5.0",
+    "slick-carousel": "^1.8.1",
+>>>>>>> add carousel and stock photos
     "webpack-dev-server": "^3.10.1"
   },
   "devDependencies": {
     "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",

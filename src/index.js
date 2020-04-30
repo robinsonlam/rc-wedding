@@ -5,12 +5,19 @@ import $ from 'jquery';
 import resetStyles from './styles/reset.css';
 import styles from './styles/main.css';
 
+import MyImage from './assets/slideshow/1.jpg';
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+import 'slick-carousel'
+
+console.log("11", MyImage);
+
 console.log("Fullpage.js Initialised:", fullpage);
 
 // Initializing it
 var fullPageInstance = new fullpage('#fullpage', {
     navigation: true,
-    sectionsColor:['#ffffff', '#d1e3ff', '#ffffff', 'd1e3ff', '#ffffff', 'd1e3ff']
+    sectionsColor:['#b76e79', '#d1e3ff', '#b76e79', 'd1e3ff', '#b76e79', 'd1e3ff']
 });
 
 
@@ -31,3 +38,5 @@ $('#submit-form').on('click', function(e) {
   });
 
 })
+
+$('#carouselPhotos').slick();
