@@ -1,24 +1,30 @@
+import html from './pages/index.html';
+
 import fullpage from 'fullpage.js';
-import $ from 'jquery';
 
 // Styles
-import resetStyles from './styles/reset.css';
-import styles from './styles/main.css';
+import styles from './styles/main.scss';
 
-import MyImage from './assets/slideshow/1.jpg';
 import $ from 'jquery';
 window.$ = window.jQuery = $;
-import 'slick-carousel'
+import 'slick-carousel';
 
-console.log("11", MyImage);
-
-console.log("Fullpage.js Initialised:", fullpage);
+import 'bootstrap';
 
 // Initializing it
-var fullPageInstance = new fullpage('#fullpage', {
-    navigation: true,
-    sectionsColor:['#b76e79', '#d1e3ff', '#b76e79', 'd1e3ff', '#b76e79', 'd1e3ff']
-});
+// var fullPageInstance = new fullpage('#fullpage', {
+//     navigation: true,
+//     sectionsColor:['#b76e79', '#d1e3ff', '#b76e79', 'd1e3ff', '#b76e79', 'd1e3ff'],
+//     afterRender: function () {
+//         $('#carouselPhotos').slick({
+//             dots: true,
+//             infinite: true,
+//             speed: 300,
+//             slidesToShow: 1,
+//             variableWidth: true
+//         });
+//     }
+// });
 
 
 // RSVP FORM SCRIPT
@@ -36,7 +42,32 @@ $('#submit-form').on('click', function(e) {
         alert("form sent")
     }
   });
-
 })
 
-$('#carouselPhotos').slick();
+$('#photoCarouselContainer').slick({
+    adaptiveHeight: true
+});
+
+
+
+/* <div class="section">
+<div class="container" data-anchor="about-us">
+  <h2 class="sectionTitle">About Us</h2>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="profilePhotoContainer">
+        <img class="profilePhoto" src="http://www.fillmurray.com/1280/720" />
+      </div>
+
+      <div class="profilePhotoContainer">
+        <img class="profilePhoto" src="http://www.fillmurray.com/1280/720" />
+      </div>
+    </div>
+    <div class="col-xs-6">
+      
+
+    </div>
+  </div>
+</div>
+</div> */

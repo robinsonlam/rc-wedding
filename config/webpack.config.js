@@ -1,22 +1,23 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   plugins: [
     new HtmlWebpackPlugin({
       title: "Christy & Rob's Wedding",
-      template: './src/pages/index.html'
+      template: 'src/pages/index.html'
     }),
   ],
+  devtool: 'inline-source-map',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, '../dist'),
-    publicPath:'./'
+    path: path.resolve(__dirname, '../dist')
   },
   devServer: {
     contentBase: path.join(__dirname, '../dist'),
-    compress: true,
+    publicPath: '/',
     port: 8080
   },
   module: {
@@ -32,12 +33,27 @@ module.exports = {
            'css-loader',
          ],
        },
+      {
+        // Loads a SASS/SCSS file and compiles it to CSS
+        test: /\.scss$/,
+        use: [
+          {
+						loader: 'style-loader'
+					},
+					{
+						loader: 'css-loader'
+					},
+					{
+						loader: 'sass-loader'
+					}
+        ]
+      },
        {
-          test: /\.(png|svg|jpg|gif)$/,
+          test: /\.(woff(2)?|ttf|eot|svg|png|svg|jpg|gif)$/,
           use: [
             'file-loader',
           ],
-        },
+        }
      ],
    },
 };

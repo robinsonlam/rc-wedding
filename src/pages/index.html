@@ -1,142 +1,182 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8"/>
-    <title><%= htmlWebpackPlugin.options.title %></title>
 
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700|Raleway:400,400i,700&display=swap" rel="stylesheet">
-  </head>
+<head>
+	<meta charset="utf-8" />
+	<title><%= htmlWebpackPlugin.options.title %></title>
 
-  <body>
-    <div id="globalNavigation">
-      <nav>
-        <a class="navigationItem" href="#about-us">
-          About Us
-        </a>
-        <a class="navigationItem" href="#the-ceremony">
-          The Ceremony
-        </a>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700|Raleway:400,400i,700&display=swap"
+		rel="stylesheet">
+</head>
 
-        <a class="navigationItem" href="#the-reception">
-          The Reception
-        </a>
+<body>
+	<div id="globalNavigation">
+		<nav>
+			<a class="navigationItem" href="#about-us">
+				About Us
+			</a>
+			<a class="navigationItem" href="#the-ceremony">
+				The Ceremony
+			</a>
 
-        <a class="navigationItem" href="#getting-there">
-          Getting There
-        </a>
-      </nav>
-    </div>
+			<a class="navigationItem" href="#the-reception">
+				The Reception
+			</a>
 
-    <div id="fullpage">
-      <div class="section active">
-        <div class="container carouselContainer" id="carouselPhotos" data-anchor="about-us">
-         
-          <div class="carouselTextContainer">
-            <img src="../assets/slideshow/1.jpg"></img>
-            <h1 class="carouselHeading">Christy & Rob's Wedding</h1>
-            <p class="carouselSubHeading">26 September 2020</p>
-          </div>
+			<a class="navigationItem" href="#getting-there">
+				Getting There
+			</a>
+		</nav>
+	</div>
 
-          <div class="carouselTextContainer">
-            <img src="../assets/slideshow/2.jpg"></img>
-            <h1 class="carouselHeading">Christy & Rob's Wedding</h1>
-            <p class="carouselSubHeading">26 September 2020</p>
-          </div>
-        </div>
-      </div>
+	<div class="pageBody">
+		<div class="pageSection" id="photo-carousel">
+			<div class="carouselContainer" id="photoCarouselContainer">
+				<div class="carouselItem">
+					<img class="carouselImage" src="../assets/slideshow/1.jpg"></img>
+					<div class="carouselImageOverlay"></div>
 
-      <div class="section">
-        <div class="container" data-anchor="the-ceremony">
-          <h2 class="sectionTitle">The Ceremony</h2>
-          <div class="textSection">
-            <h3>4:00 PM</h3>
-            <p>Depena Reserve, Russell Ave, Dolls Point, <br/> New South Wales, Australia</p>
-          </div>
-            
-          <div class="textSection">
-            <p>Ceremony is followed by photographs.<br/>
-              Light afternoon tea will be provided.</p>
-          </div>
+					<div class="carouselText">
+						<h1 class="carouselHeading">Christy & Rob's Wedding</h1>
+						<p class="carouselSubHeading">26 September 2020</p>
+					</div>
+				</div>
 
-        </div>
-      </div>
+				<div class="carouselItem">
+					<img class="carouselImage" src="../assets/slideshow/2.jpg"></img>
+					<div class="carouselImageOverlay"></div>
 
-      <div class="section">
-        <div class="container" data-anchor="the-reception">
-          <h2 class="sectionTitle">The Reception</h2>
-        
-          <div class="textSection">
-            <h3>6:00 PM to 11:00 PM</h3>
-            <p><em>Georges River Sailing Club</em> <br/> Sanoni Avenue, Sandringham, New South Wales, Australia</p>
-          </div>
-          
-          <div class="textSection">
-            <p>There will be canapes and a three-course dinner, as well as music and dancing!</p>
-          </div>
-        </div>
-      </div>
+					<div class="carouselText">
+						<h1 class="carouselHeading">Christy & Rob's Wedding</h1>
+						<p class="carouselSubHeading">26 September 2020</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pageSection" id="about-us">
+			<div class="aboutUsContainer">
+				<div class="aboutUsColumn col-6">
+					<div class="aboutUsPhotoContainer">
+						<img src=http://www.fillmurray.com/1280/720" alt="" class="aboutUsPhoto" />
+					</div>
+					<div class="aboutUsDescription">
+						<p>Christy Cheung</p>
+					</div>
+				</div>
+				<div class="aboutUsColumn">
+					<div class="aboutUsPhotoContainer">
+						<img src=http://www.fillmurray.com/1280/720" alt="" class="aboutUsPhoto" />
+					</div>
+					<div class="aboutUsDescription">
+						<p>Robinson Lam</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-      <div class="section">
-        <div class="container" data-anchor="getting-there">
-          <h2 class="sectionTitle">Getting There</h2>
+	<div class="pageFooter">
+	</div>
 
-          <div class="textSection">
-            <h3>Driving</h3>
-            <p>Please park at the car park of Georges River 16ft Sailing Club.
-              The ceremony location is just to the left as you exit the car park towards Peter Depena Reserve.</p>
-          </div>
 
-          <div class="textSection">
-            <h3>Georges River Sailing Club Courtesy Bus</h3>
-            <p>An hourly courtesy bus is available from the Georges River Sailing Club for pick ups and drop offs (pick up is free but drop off is $3) within a 5 km radius, i.e. from Kogarah Station. The bus runs from 1 pm to 11 pm.
-              Please call 0410 424 408 to make your own arrangements, or see <a href="https://georgesriversailingclub.com.au/" target="_blank">https://georgesriversailingclub.com.au/</a> for more information.</p>
-          </div>
-          
-          <div class="textSection">
-            <h3>Public Transport</h3>
-            <p>There are various buses from nearby stations with stops nearby. Please see <a href="https://transportnsw.info/trip/" target="_blank">https://transportnsw.info/trip/</a> to organise your trip.</p>
-          </div>
-        </div>
-      </div>
+	<div class="section">
+		<div class="container" data-anchor="the-ceremony">
+			<h2 class="sectionTitle">The Ceremony</h2>
+			<div class="textSection">
+				<h3>4:00 PM</h3>
+				<p>Depena Reserve, Russell Ave, Dolls Point, <br /> New South Wales, Australia</p>
+			</div>
 
-      <div class="section">
-        <div class="container">
-          <h2 class="sectionTitle">RSVP</h2>
+			<div class="textSection">
+				<p>Ceremony is followed by photographs.<br />
+					Light afternoon tea will be provided.</p>
+			</div>
 
-          <div class="textSection">
-            <form name="weddingRsvpForm" id="weddingRsvpForm">
+		</div>
+	</div>
 
-              <div>
-                <label>Your Name</label>
-                <input type="text" name="guest_name" placeholder="Your Name"/>
-              </div>
-            
-              <div>
-                <label>Number of Guests</label>
-                <input type="text" name="number_attending" placeholder="Number of Guests"/>
-              </div>
-              
-              <div>
-                <label>Dietary Requirements</label>
-                <input type="text" name="diet_requirements" placeholder="Vegetarian, Allergies etc..."/>
-              </div>
-              
-              <div>
-                <label>Song Suggestions</label>
-                <input type="text" name="song_suggestions" placeholder="Song Suggestions"/>
-              </div>
+	<div class="section">
+		<div class="container" data-anchor="the-reception">
+			<h2 class="sectionTitle">The Reception</h2>
 
-              <div>
-                <button type="submit"id="submit-form">Submit RSVP</button>
-              </div>
-            </form>
-            
-          </div>
+			<div class="textSection">
+				<h3>6:00 PM to 11:00 PM</h3>
+				<p><em>Georges River Sailing Club</em> <br /> Sanoni Avenue, Sandringham, New South Wales, Australia</p>
+			</div>
 
-     
-          
-        </div>
-      </div>
-    </div>
-  </body>
+			<div class="textSection">
+				<p>There will be canapes and a three-course dinner, as well as music and dancing!</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="container" data-anchor="getting-there">
+			<h2 class="sectionTitle">Getting There</h2>
+
+			<div class="textSection">
+				<h3>Driving</h3>
+				<p>Please park at the car park of Georges River 16ft Sailing Club.
+					The ceremony location is just to the left as you exit the car park towards Peter Depena Reserve.</p>
+			</div>
+
+			<div class="textSection">
+				<h3>Georges River Sailing Club Courtesy Bus</h3>
+				<p>An hourly courtesy bus is available from the Georges River Sailing Club for pick ups and drop offs
+					(pick up is free but drop off is $3) within a 5 km radius, i.e. from Kogarah Station. The bus runs
+					from 1 pm to 11 pm.
+					Please call 0410 424 408 to make your own arrangements, or see <a
+						href="https://georgesriversailingclub.com.au/"
+						target="_blank">https://georgesriversailingclub.com.au/</a> for more information.</p>
+			</div>
+
+			<div class="textSection">
+				<h3>Public Transport</h3>
+				<p>There are various buses from nearby stations with stops nearby. Please see <a
+						href="https://transportnsw.info/trip/" target="_blank">https://transportnsw.info/trip/</a> to
+					organise your trip.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="container">
+			<h2 class="sectionTitle">RSVP</h2>
+
+			<div class="textSection">
+				<form name="weddingRsvpForm" id="weddingRsvpForm">
+
+					<div>
+						<label>Your Name</label>
+						<input type="text" name="guest_name" placeholder="Your Name" />
+					</div>
+
+					<div>
+						<label>Number of Guests</label>
+						<input type="text" name="number_attending" placeholder="Number of Guests" />
+					</div>
+
+					<div>
+						<label>Dietary Requirements</label>
+						<input type="text" name="diet_requirements" placeholder="Vegetarian, Allergies etc..." />
+					</div>
+
+					<div>
+						<label>Song Suggestions</label>
+						<input type="text" name="song_suggestions" placeholder="Song Suggestions" />
+					</div>
+
+					<div>
+						<button type="submit" id="submit-form">Submit RSVP</button>
+					</div>
+				</form>
+
+			</div>
+
+
+
+		</div>
+	</div>
+</body>
+
 </html>

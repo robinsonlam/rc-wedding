@@ -1,0 +1,164 @@
+@import "~bootstrap/scss/bootstrap";
+
+$slick-font-path: "~slick-carousel/slick/fonts/";
+$slick-loader-path: "~slick-carousel/slick/";
+
+@import '~slick-carousel/slick/slick', '~slick-carousel/slick/slick-theme';
+
+@import "reset.css";
+
+/* Font Styles */
+
+body { font-family: 'Josefin Sans'; width: 100%; background: transparent; }
+
+h1 { font-size: 2.00em; font-weight: bold; margin-bottom: 0.67em; font-family: 'Raleway'; }
+h2 { font-size: 1.50em; font-weight: bold; margin-bottom: 0.67em }
+h3 { font-size: 1.17em; font-weight: bold; margin-bottom: 0.67em }
+h4 { font-size: 1.00em; font-weight: bold; }
+h5 { font-size: 0.83em; font-weight: bold; }
+h6 { font-size: 0.67em; font-weight: bold; }
+
+p { margin-bottom: 1em; line-height: 1.6em; }
+
+/* Variables */
+
+$color-rose-gold: rgba(183, 110, 121, 1);
+
+/* Global Styles */
+
+html {
+    background: $color-rose-gold;
+}
+
+
+/* Page Container */
+
+.pageBody {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 64px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.pageSection {
+    @extend .container-fluid;
+    padding: 0;
+}
+
+.textSection {
+    margin-bottom: 20px;
+}
+
+/* Global Navigation */
+
+#globalNavigation {
+    position: fixed;
+    z-index: 99;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background: rgba(230, 230, 230, 1);
+
+    padding: 20px;
+    padding-top: 24px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.navigationItem {
+    color: $color-rose-gold;
+    text-decoration: none;
+
+    padding: 10px 20px 10px;
+}
+
+/* Carousel */
+
+.carouselContainer {
+    @extend .container-fluid;
+    padding: 0;
+}
+
+.carouselItem {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 800px;
+
+    overflow: hidden;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.carouselImage {
+    width: 100%;
+}
+
+.carouselImageOverlay {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.carouselText {
+    @extend .container;
+
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%,-50%);
+
+    text-align: center;
+    color: white;
+}
+
+.carouselHeading {
+
+}
+
+.carouselSubHeading {
+    
+}
+
+/* About Us */
+
+#about-us {
+    @extend .container;
+}
+
+.aboutUsContainer {
+    @extend .row;
+}
+
+.aboutUsColumn {
+    @extend .col-6;
+}
+
+.aboutUsPhotoContainer {
+    height: 256px;
+    width: 256px;
+
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    overflow: hidden;
+
+    background: $color-rose-gold;
+}
+
+.aboutUsPhoto {
+    width: 100%;
+}
