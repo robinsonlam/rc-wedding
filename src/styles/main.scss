@@ -79,6 +79,10 @@ html {
 
 /* Carousel */
 
+#photo-carousel {
+    position: relative;
+}
+
 .carouselContainer {
     @extend .container-fluid;
     padding: 0;
@@ -97,7 +101,20 @@ html {
 }
 
 .carouselImage {
-    width: 100%;
+    width: auto;
+    height: 100%;
+}
+
+.carouselGlobalText {
+    @extend .container;
+
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+
+    text-align: center;
+    color: white;
 }
 
 .carouselImageOverlay {
