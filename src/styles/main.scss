@@ -7,9 +7,21 @@ $slick-loader-path: "~slick-carousel/slick/";
 
 @import "reset.css";
 
+/* Variables */
+
+$color-black: rgb(56, 56, 56);
+$color-rose-gold-dark: rgb(161, 135, 131);
+$color-rose-gold: #FDDCD7;
+$color-white-gold: rgba(255, 254, 247, 1);
+$color-gold: #eeb600;
+
 /* Font Styles */
 
-body { font-family: 'Montseratt'; width: 100%; background: transparent; }
+body { 
+    font-family: 'Simonetta'; 
+    width: 100%; 
+    background: transparent; 
+}
 
 h1 { font-size: 2.00em; font-weight: bold; margin-bottom: 0.67em; font-family: 'Simonetta'; }
 h2 { font-size: 1.50em; font-weight: bold; margin-bottom: 0.67em }
@@ -20,13 +32,7 @@ h6 { font-size: 0.67em; font-weight: bold; }
 
 p { margin-bottom: 1em; line-height: 1.6em; }
 
-/* Variables */
 
-$color-black: rgb(56, 56, 56);
-$color-rose-gold-dark: rgb(161, 135, 131);
-$color-rose-gold: #FDDCD7;
-$color-white-gold: rgba(255, 254, 247, 1);
-$color-gold: #c79902;
 
 /* Global Styles */
 
@@ -35,6 +41,13 @@ html {
     // background: $color-black;
 }
 
+.colorRoseGold {
+    color: $color-rose-gold;
+}
+
+.colorGold {
+    color: $color-gold;
+}
 
 /* Page Container */
 
@@ -187,12 +200,37 @@ html {
     right: 0;
     bottom: 0;
 
-    background: rgba(#333, 0.3);
+    background: rgba(#000, 0.5);
     transition: all 0.17s ease-in-out;
 }
 
 .carouselItem:hover .carouselImageOverlay {
-    background: rgba(#333, 0);
+    background: rgba(#000, 0);
+}
+
+.carouselGlobalText.no-bg {
+    color: white;
+    background: none;
+    padding: 0;
+}
+
+.carouselGlobalText.no-bg .carouselHeading {
+    font-size: 96px;
+}
+
+.carouselGlobalText.no-bg .carouselSubHeading {
+    font-size: 36px;
+    font-style: italic;
+    font-family: 'Simonetta';
+    letter-spacing: 0.1em;
+}
+
+.carouselGlobalText.no-bg:after {
+    border: none;
+}
+
+.carouselGlobalText.no-bg:hover {
+    background: transparent;
 }
 
 .carouselGlobalText {
@@ -203,7 +241,7 @@ html {
 
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 50%;
     transform: translate(-50%,-50%);
 
     text-align: center;
@@ -231,18 +269,6 @@ html {
     bottom: -20px;
 
     border: 2px solid white;
-}
-
-.carouselText {
-    @extend .container;
-
-    position: absolute;
-    left: 50%;
-    top: 80%;
-    transform: translate(-50%,-50%);
-
-    text-align: center;
-    color: white;
 }
 
 .carouselHeading {
@@ -287,27 +313,36 @@ html {
 
 #about-us {
     @extend .container;
-    padding-top: 80px;
+    padding: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .aboutUsContainer {
     @extend .row;
 }
 
-.aboutUsColumn {
+.aboutUsRow {
     @extend .col-6;
 
     display: flex;
-    flex-wrap: wrap;
-
     justify-content: center;
+
+    margin: 10px 0;
+}
+
+.aboutUsRow#christy-row {
+    justify-content: flex-start;
+}
+
+.aboutUsRow#rob-row {
+    justify-content: flex-end;
 }
 
 .aboutUsPhotoContainer {
-    height: 256px;
-    width: 256px;
+    height: 260px;
+    width: 260px;
 
-    border-radius: 100%;
     display: flex;
 
     align-items: center;
@@ -316,25 +351,49 @@ html {
     overflow: hidden;
 
     background: $color-black;
-    border: 5px solid white;
+}
+
+.aboutUsPhotoContainer img {
+    width: 100%;
 }
 
 .aboutUsPhoto {
     width: 100%;
 }
 
+@media (max-width: 720px) {
+    .aboutUsPhotoContainer {
+        height: 200px;
+        height: 200px;
+    }
+
+    .aboutUsPhotoContainer img {
+        width: auto;
+        height: 100%;
+    }
+}
+
 .aboutUsDescription {
-    width: 100%;
     text-align: center;
  
-    padding: 40px 0 40px;
+    padding: 40px 20px;
+    padding-left: 60px;
+    padding-right: 0;
 }
 
 .aboutUsName {
-    font-family: 'Niconne', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Simonetta', 'Helvetica', 'Arial', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
     font-weight: bold;
-    font-size: 64px;
-    color: white;
+    font-style: italic;
+    color: $color-rose-gold-dark;
+
+    margin-bottom: 20px;
+}
+
+#rob-row .aboutUsName {
+    margin-left: auto;
 }
 
 .aboutUsSeperator {

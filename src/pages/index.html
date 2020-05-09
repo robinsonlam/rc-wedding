@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<title><%= htmlWebpackPlugin.options.title %></title>
 
-	<link href="https://fonts.googleapis.com/css?family=Simonetta:400,900|Montseratt:400,400i,700&display=swap"
+	<link href="https://fonts.googleapis.com/css?family=Simonetta:400,900,400i,900i|Montseratt:400,400i,700&display=swap"
 		rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Niconne&display=swap"
 		rel="stylesheet">
@@ -131,7 +131,7 @@
 				</div>
 			</div>
 
-			<div class="carouselGlobalText">
+			<div class="carouselGlobalText no-bg">
 				<h1 class="carouselHeading">Christy & Rob's <br /> Wedding</h1>
 				<p class="carouselSubHeading">26 . 09 . 2020</p>
 			</div>
@@ -139,13 +139,12 @@
 
 		<div class="pageSection" id="about-us">
 			<div class="aboutUsContainer">
-				<div class="aboutUsColumn col-6">
+				<div class="aboutUsRow" id="christy-row">
 					<div class="aboutUsPhotoContainer">
 						<img src="../assets/slideshow/christy.jpg" alt="" class="aboutUsPhoto" />
 					</div>
 					<div class="aboutUsDescription">
-						<p class="aboutUsName">Christy</p>
-						<hr class="aboutUsSeperator"></hr>
+						<p class="aboutUsName">Christy Cheung</p>
 						<ul class="aboutUsFacts">
 							<li class="factItem"><p>Is a girl</p></li>
 							<li class="factItem"><p>Is the bride</p></li>
@@ -153,13 +152,12 @@
 						</ul>
 					</div>
 				</div>
-				<div class="aboutUsColumn">
+				<div class="aboutUsRow" id="rob-row">
 					<div class="aboutUsPhotoContainer">
 						<img src="../assets/slideshow/rob.jpg" alt="" class="aboutUsPhoto" />
 					</div>
 					<div class="aboutUsDescription">
-						<p class="aboutUsName">Rob</p>
-						<hr class="aboutUsSeperator"></hr>
+						<p class="aboutUsName">Robinson Lam</p>
 						<ul class="aboutUsFacts">
 							<li class="factItem"><p>Is a guy</p></li>
 							<li class="factItem"><p>Is the groom</p></li>
