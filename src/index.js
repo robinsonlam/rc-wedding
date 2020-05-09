@@ -44,9 +44,9 @@ $('#submit-form').on('click', function(e) {
   });
 })
 
-$('#photoCarouselContainer').slick({
-    adaptiveHeight: true
-});
+// $('#photoCarouselContainer').slick({
+//     adaptiveHeight: true
+// });
 
 
 

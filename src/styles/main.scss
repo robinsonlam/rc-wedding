@@ -9,9 +9,9 @@ $slick-loader-path: "~slick-carousel/slick/";
 
 /* Font Styles */
 
-body { font-family: 'Josefin Sans'; width: 100%; background: transparent; }
+body { font-family: 'Montseratt'; width: 100%; background: transparent; }
 
-h1 { font-size: 2.00em; font-weight: bold; margin-bottom: 0.67em; font-family: 'Raleway'; }
+h1 { font-size: 2.00em; font-weight: bold; margin-bottom: 0.67em; font-family: 'Simonetta'; }
 h2 { font-size: 1.50em; font-weight: bold; margin-bottom: 0.67em }
 h3 { font-size: 1.17em; font-weight: bold; margin-bottom: 0.67em }
 h4 { font-size: 1.00em; font-weight: bold; }
@@ -22,12 +22,17 @@ p { margin-bottom: 1em; line-height: 1.6em; }
 
 /* Variables */
 
-$color-rose-gold: rgba(183, 110, 121, 1);
+$color-black: rgb(56, 56, 56);
+$color-rose-gold-dark: rgb(161, 135, 131);
+$color-rose-gold: #FDDCD7;
+$color-white-gold: rgba(255, 254, 247, 1);
+$color-gold: #c79902;
 
 /* Global Styles */
 
 html {
-    background: $color-rose-gold;
+    background: $color-white-gold;
+    // background: $color-black;
 }
 
 
@@ -61,7 +66,9 @@ html {
     left: 0;
     right: 0;
 
-    background: rgba(230, 230, 230, 1);
+    width: 100%;
+
+    background: $color-white-gold;
 
     padding: 20px;
     padding-top: 24px;
@@ -70,51 +77,106 @@ html {
     justify-content: center;
 }
 
+#globalNavigation nav {
+    width: 100%;
+    justify-content: center;
+
+    display: flex;
+}
+
 .navigationItem {
-    color: $color-rose-gold;
+    display: flex;
+    align-items: center;
+
+    color: $color-black;
     text-decoration: none;
 
     padding: 10px 20px 10px;
+
+    cursor: pointer;
+}
+
+.navigationItem:hover {
+    color: $color-rose-gold-dark;
+    text-decoration: none;
+}
+
+.logoContainer {
+    margin: 0 40px;
+    background: $color-white-gold;
+}
+
+.logoContainer:before {
+    display: flex;
+    content: '';
+    border: 2px solid $color-gold;
+    width: 10px;
+    height: 10px;
+
+    margin: 0 auto;
+    margin-bottom: 5px;
+
+    border-radius: 100%;
+    background: transparent;
+}
+
+.logoText {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1.5em;
+
+    margin: 0;
+    font-size: 14px;
+
+    font-family: 'Simonetta';
 }
 
 /* Carousel */
 
 #photo-carousel {
     position: relative;
+    margin-bottom: 40px;
+}
+
+#photo-carousel-overlay {
+    position: absolute;
+    z-index: 1;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(0deg, rgba(255,254,247,0.6) 0%, rgba(255,254,247,0) 100%);
 }
 
 .carouselContainer {
     @extend .container-fluid;
+    width: 100vw;
+    line-height: 0;
+
     padding: 0;
+   
+    -webkit-column-count: 6;
+    -webkit-column-gap:   0px;
+    -moz-column-count:    6;
+    -moz-column-gap:      0px;
+    column-count:         6;
+    column-gap:           0px; 
 }
 
 .carouselItem {
-    display: flex;
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+
     position: relative;
-    width: 100%;
-    height: 800px;
-
-    overflow: hidden;
-
-    align-items: center;
-    justify-content: center;
 }
 
 .carouselImage {
-    width: auto;
+    width: 100%;
     height: 100%;
-}
-
-.carouselGlobalText {
-    @extend .container;
-
-    position: absolute;
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%,-50%);
-
-    text-align: center;
-    color: white;
 }
 
 .carouselImageOverlay {
@@ -125,7 +187,50 @@ html {
     right: 0;
     bottom: 0;
 
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(#333, 0.3);
+    transition: all 0.17s ease-in-out;
+}
+
+.carouselItem:hover .carouselImageOverlay {
+    background: rgba(#333, 0);
+}
+
+.carouselGlobalText {
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+
+    text-align: center;
+    padding: 20px 40px;
+
+    transition: all 0.34s ease-in-out;
+    background: rgba(255, 255, 255, 0.9);
+    color: $color-black;
+
+    border: 10px solid transparent;
+    white-space: nowrap;
+}
+
+.carouselGlobalText:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.carouselGlobalText:after {
+    position: absolute;
+    content: '';
+
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+
+    border: 2px solid white;
 }
 
 .carouselText {
@@ -141,17 +246,48 @@ html {
 }
 
 .carouselHeading {
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 40px;                                                                                  ;
+    padding-bottom: 20px;
 
+    display: flex;
+    justify-content: center;
+
+    font-weight: 900;
+}
+
+.carouselHeading::after {
+    position: absolute;
+    content: '';
+    
+    bottom: -30px;
+    margin: 0 auto;
+
+    box-sizing: content-box;
+
+
+    display: flex;
+    border: 4px solid $color-gold;
+    width: 20px;
+    height: 20px;
+
+    margin: 0 auto;
+    margin-bottom: 5px;
+
+    border-radius: 100%;
+    background: transparent;
 }
 
 .carouselSubHeading {
-    
+    margin: 0;
 }
 
 /* About Us */
 
 #about-us {
     @extend .container;
+    padding-top: 80px;
 }
 
 .aboutUsContainer {
@@ -160,6 +296,11 @@ html {
 
 .aboutUsColumn {
     @extend .col-6;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
 }
 
 .aboutUsPhotoContainer {
@@ -168,14 +309,36 @@ html {
 
     border-radius: 100%;
     display: flex;
+
     align-items: center;
     justify-content: center;
     
     overflow: hidden;
 
-    background: $color-rose-gold;
+    background: $color-black;
+    border: 5px solid white;
 }
 
 .aboutUsPhoto {
     width: 100%;
+}
+
+.aboutUsDescription {
+    width: 100%;
+    text-align: center;
+ 
+    padding: 40px 0 40px;
+}
+
+.aboutUsName {
+    font-family: 'Niconne', 'Helvetica', 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 64px;
+    color: white;
+}
+
+.aboutUsSeperator {
+    border: 2px solid white;
+    width: 400px;
+    margin-bottom: 40px;
 }
