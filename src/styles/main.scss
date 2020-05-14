@@ -138,6 +138,16 @@ html {
 .pageHeading {
 }
 
+.pageSection.transparent {
+    & .pageHeader {
+        margin-top: 40px;
+    }
+
+    & .pageHeading {
+        color: $color-white;
+    }
+}
+
 #home {
     padding-top: 40px;
     height: 500px;

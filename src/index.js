@@ -51,7 +51,7 @@ $(document).ready(() => {
     });
 
     var rellax = new Rellax('.rellax', {
-        speed: -2,
+        speed: 0,
         center: false,
         wrapper: null,
         round: true,
