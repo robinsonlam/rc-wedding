@@ -1,72 +1,41 @@
-@import "~bootstrap/scss/bootstrap";
-
-$slick-font-path: "~slick-carousel/slick/fonts/";
-$slick-loader-path: "~slick-carousel/slick/";
-
-@import '~slick-carousel/slick/slick', '~slick-carousel/slick/slick-theme';
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Raleway:wght@100;200;300;400;500;700&display=swap');
 
 @import "reset.css";
 
 /* Variables */
 
-$color-black: rgb(56, 56, 56);
-$color-rose-gold-dark: rgb(161, 135, 131);
-$color-rose-gold: #FDDCD7;
-$color-white-gold: rgba(255, 254, 247, 1);
-$color-gold: #eeb600;
+$color-white: #fafafa;
+$color-text-black: #33424E;
+$color-text-brown: #8F857B;
 
 /* Font Styles */
 
 body { 
-    font-family: 'Simonetta'; 
-    width: 100%; 
-    background: transparent; 
+    font-family: 'Raleway'; 
+    font-weight: 200;
+
+    /* Let the user scroll */
+    height: 2000px;
+    color: $color-text-black;
+    /* Frontmost scene and background should have the same color */
+    background: $color-white;
 }
 
-h1 { font-size: 2.00em; font-weight: bold; margin-bottom: 0.67em; font-family: 'Simonetta'; }
-h2 { font-size: 1.50em; font-weight: bold; margin-bottom: 0.67em }
-h3 { font-size: 1.17em; font-weight: bold; margin-bottom: 0.67em }
-h4 { font-size: 1.00em; font-weight: bold; }
-h5 { font-size: 0.83em; font-weight: bold; }
-h6 { font-size: 0.67em; font-weight: bold; }
+h1 { font-size: 3.00em; font-weight: 700; color: $color-text-black; margin-bottom: 0.67em; letter-spacing: 0.13em; }
+h2 { font-size: 2.50em; font-weight: 400; color: $color-text-black; margin-bottom: 0.67em }
+h3 { font-size: 1.57em; font-weight: 400; color: $color-text-black; margin-bottom: 0.67em; letter-spacing: 0.13em; }
+h4 { font-size: 1.00em; font-weight: 400; color: $color-text-black; }
+h5 { font-size: 0.83em; font-weight: 400; color: $color-text-black; }
+h6 { font-size: 0.67em; font-weight: 400; color: $color-text-black; }
 
-p { margin-bottom: 1em; line-height: 1.6em; }
+p { margin-bottom: 1em; line-height: 1.6em; font-weight: 300; }
 
 
 
 /* Global Styles */
 
 html {
-    background: $color-white-gold;
     // background: $color-black;
-}
-
-.colorRoseGold {
-    color: $color-rose-gold;
-}
-
-.colorGold {
-    color: $color-gold;
-}
-
-/* Page Container */
-
-.pageBody {
-    height: 100vh;
-    width: 100vw;
-    padding-top: 64px;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.pageSection {
-    @extend .container-fluid;
-    padding: 0;
-}
-
-.textSection {
-    margin-bottom: 20px;
 }
 
 /* Global Navigation */
@@ -81,7 +50,7 @@ html {
 
     width: 100%;
 
-    background: $color-white-gold;
+    background: $color-white;
 
     padding: 20px;
     padding-top: 24px;
@@ -101,7 +70,7 @@ html {
     display: flex;
     align-items: center;
 
-    color: $color-black;
+    color: $color-text-black;
     text-decoration: none;
 
     padding: 10px 20px 10px;
@@ -110,27 +79,12 @@ html {
 }
 
 .navigationItem:hover {
-    color: $color-rose-gold-dark;
+    color: $color-text-brown;
     text-decoration: none;
 }
 
 .logoContainer {
     margin: 0 40px;
-    background: $color-white-gold;
-}
-
-.logoContainer:before {
-    display: flex;
-    content: '';
-    border: 2px solid $color-gold;
-    width: 10px;
-    height: 10px;
-
-    margin: 0 auto;
-    margin-bottom: 5px;
-
-    border-radius: 100%;
-    background: transparent;
 }
 
 .logoText {
@@ -141,263 +95,146 @@ html {
 
     margin: 0;
     font-size: 14px;
-
-    font-family: 'Simonetta';
+    color: $color-text-black;
 }
 
-/* Carousel */
 
-#photo-carousel {
-    position: relative;
-    margin-bottom: 40px;
-}
+//  Parallax
 
-#photo-carousel-overlay {
+.background, .foreground {
     position: absolute;
+    left: 0;
+    right: 0;
+    top: 80px;
+}
+
+.background {
     z-index: 1;
+}
 
-    bottom: 0;
-    left: 0;
-    right: 0;
+.backgroundImage {
     width: 100%;
-    height: 100px;
-    background: linear-gradient(0deg, rgba(255,254,247,1) 10%, rgba(255,254,247,0) 100%);
+    filter: contrast(90%) brightness(70%);
 }
 
-.carouselContainer {
-    @extend .container-fluid;
-    width: 100vw;
-    line-height: 0;
-
-    padding: 0;
-   
-    -webkit-column-count: 6;
-    -webkit-column-gap:   0px;
-    -moz-column-count:    6;
-    -moz-column-gap:      0px;
-    column-count:         6;
-    column-gap:           0px; 
+.foreground {
+    z-index: 2;
 }
 
-.carouselItem {
-    /* Just in case there are inline attributes */
-    width: 100% !important;
-    height: auto !important;
-
-    position: relative;
-}
-
-.carouselImage {
+.pageSection {
     width: 100%;
-    height: 100%;
 }
 
-.carouselImageOverlay {
+.pageHeader {
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 
-    background: rgba(#000, 0.5);
-    transition: all 0.17s ease-in-out;
-}
-
-.carouselItem:hover .carouselImageOverlay {
-    background: rgba(#000, 0);
-}
-
-.carouselGlobalText.no-bg {
-    color: white;
-    background: none;
-    padding: 0;
-}
-
-.carouselGlobalText.no-bg .carouselHeading {
-    font-size: 96px;
-}
-
-.carouselGlobalText.no-bg .carouselSubHeading {
-    font-size: 36px;
-    font-style: italic;
-    font-family: 'Simonetta';
-    letter-spacing: 0.1em;
-}
-
-.carouselGlobalText.no-bg:after {
-    border: none;
-}
-
-.carouselGlobalText.no-bg:hover {
-    background: transparent;
-}
-
-.carouselGlobalText {
     display: flex;
+    justify-content: center;
+    text-align: center;
+
+    padding: 60px 0px 20px;
+}
+
+.pageHeading {
+}
+
+#home {
+    padding-top: 40px;
+    height: 500px;
+    
+    display: flex;
+    align-items: center;
     justify-content: center;
 
     flex-direction: column;
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-
     text-align: center;
-    padding: 20px 40px;
-
-    transition: all 0.34s ease-in-out;
-    background: rgba(255, 255, 255, 0.9);
-    color: $color-black;
-
-    border: 10px solid transparent;
-    white-space: nowrap;
 }
 
-.carouselGlobalText:hover {
-    background: rgba(255, 255, 255, 1);
-}
-
-.carouselGlobalText:after {
-    position: absolute;
-    content: '';
-
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-
-    border: 2px solid white;
-}
-
-.carouselHeading {
-    position: relative;
-    text-transform: uppercase;
-    margin-bottom: 40px;                                                                                  ;
-    padding-bottom: 20px;
-
-    display: flex;
-    justify-content: center;
-
-    font-weight: 900;
-}
-
-.carouselHeading::after {
-    position: absolute;
-    content: '';
-    
-    bottom: -30px;
-    margin: 0 auto;
-
-    box-sizing: content-box;
-
-
-    display: flex;
-    border: 4px solid $color-gold;
-    width: 20px;
-    height: 20px;
-
-    margin: 0 auto;
-    margin-bottom: 5px;
-
-    border-radius: 100%;
-    background: transparent;
-}
-
-.carouselSubHeading {
-    margin: 0;
-}
-
-/* About Us */
-
-#about-us {
-    @extend .container;
-    padding: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.aboutUsContainer {
-    @extend .row;
-}
-
-.aboutUsRow {
-    @extend .col-6;
-
-    display: flex;
-    justify-content: center;
-
-    margin: 10px 0;
-}
-
-.aboutUsRow#christy-row {
-    justify-content: flex-start;
-}
-
-.aboutUsRow#rob-row {
-    justify-content: flex-end;
-}
-
-.aboutUsPhotoContainer {
-    height: 260px;
-    width: 260px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-    
-    overflow: hidden;
-
-    background: $color-black;
-}
-
-.aboutUsPhotoContainer img {
-    width: 100%;
-}
-
-.aboutUsPhoto {
-    width: 100%;
-}
-
-@media (max-width: 720px) {
-    .aboutUsPhotoContainer {
-        height: 200px;
-        height: 200px;
-    }
-
-    .aboutUsPhotoContainer img {
-        width: auto;
-        height: 100%;
-    }
-}
-
-.aboutUsDescription {
-    text-align: center;
- 
-    padding: 40px 20px;
-    padding-left: 60px;
-    padding-right: 0;
-}
-
-.aboutUsName {
-    font-family: 'Simonetta', 'Helvetica', 'Arial', sans-serif;
-    font-size: 24px;
-    text-transform: uppercase;
+.landingText {
+    font-family: "Pinyon Script";
+    color: white;
     font-weight: bold;
-    font-style: italic;
-    color: $color-rose-gold-dark;
+    line-height: 1.1em;
+
+    font-size: 72px;
 
     margin-bottom: 20px;
 }
 
-#rob-row .aboutUsName {
-    margin-left: auto;
+.landingSubText {
+    color: white;
+    font-size: 24px;
+
+    margin-bottom: 20px;
 }
 
-.aboutUsSeperator {
-    border: 2px solid white;
-    width: 400px;
+.rsvpButton {
+    background: $color-text-black;
+    padding: 10px 40px;
+    color: $color-white;
+    text-decoration: none;
+}
+
+
+#about-us {
+    background: $color-white;
+    height: 640px;
+}
+
+.aboutUsRowContainer {
+    width: 100%;
+}
+
+.aboutUsRow {
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.aboutUsColumn {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.profilePhotoContainer {
+    width: 160px;
+    height: 160px;
+
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.profilePhoto {
+    width: 100%;
+}
+
+.profileFactsContainer {
+    padding: 20px;
+}
+
+.profileName {
+    font-weight: bold;
+}
+
+.profileFactsContainer {
+
+}
+
+.profileName {
+    margin-top: 10px;
     margin-bottom: 40px;
+    padding: 0 20px 20px;
+    border-bottom: 2px solid $color-text-brown;
+}
+
+.profileFacts {
+    & li {
+        position: relative;
+        margin-bottom: 20px;
+    }
 }

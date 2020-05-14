@@ -20,10 +20,13 @@
   },
   "homepage": "https://github.com/robinsonlam/rc-wedding#readme",
   "dependencies": {
+    "basicscroll": "^3.0.3",
     "bootstrap": "^4.4.1",
     "fullpage.js": "^3.0.8",
     "jquery": "^3.5.0",
+    "jquery-parallax.js": "^1.5.0",
     "popper.js": "^1.16.1",
+    "rellax": "^1.12.1",
     "slick-carousel": "^1.8.1",
     "webpack-dev-server": "^3.10.1"
   },

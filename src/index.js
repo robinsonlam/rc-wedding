@@ -7,9 +7,12 @@ import styles from './styles/main.scss';
 
 import $ from 'jquery';
 window.$ = window.jQuery = $;
+
 import 'slick-carousel';
 
 import 'bootstrap';
+
+import Rellax from 'rellax';
 
 // Initializing it
 // var fullPageInstance = new fullpage('#fullpage', {
@@ -27,23 +30,39 @@ import 'bootstrap';
 // });
 
 
-// RSVP FORM SCRIPT
-var $form = $('form#weddingRsvpForm'),
-    url = 'https://script.google.com/macros/s/AKfycbzKBO9PBckRlXfRPiruLpq2yOj6MwwlSUcDOHGlkoNfMtWntrqJ/exec'
 
-$('#submit-form').on('click', function(e) {
-  e.preventDefault();
-  var jqxhr = $.ajax({
-    url: url,
-    method: "GET",
-    dataType: "json",
-    data: $form.serialize(),
-    success: function() {
-        alert("form sent")
-    }
-  });
-})
 
+$(document).ready(() => {
+    // RSVP FORM SCRIPT
+    var $form = $('form#weddingRsvpForm'),
+        url = 'https://script.google.com/macros/s/AKfycbzKBO9PBckRlXfRPiruLpq2yOj6MwwlSUcDOHGlkoNfMtWntrqJ/exec'
+
+    $('#submit-form').on('click', function(e) {
+        e.preventDefault();
+        var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: $form.serialize(),
+            success: function() {
+                alert("form sent")
+            }
+        });
+    });
+
+    var rellax = new Rellax('.rellax', {
+        speed: -2,
+        center: false,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false
+    });
+});
+
+
+
+// data-parallax="scroll" data-image-src="../assets/slideshow/1.jpg"
 // $('#photoCarouselContainer').slick({
 //     adaptiveHeight: true
 // });

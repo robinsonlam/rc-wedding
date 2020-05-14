@@ -4,11 +4,6 @@
 <head>
 	<meta charset="utf-8" />
 	<title><%= htmlWebpackPlugin.options.title %></title>
-
-	<link href="https://fonts.googleapis.com/css?family=Simonetta:400,900,400i,900i|Montseratt:400,400i,700&display=swap"
-		rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Niconne&display=swap"
-		rel="stylesheet">
 </head>
 
 <body>
@@ -34,247 +29,60 @@
 			</a>
 		</nav>
 	</div>
+	
 
-	<div class="pageBody">
-		<div class="pageSection" id="photo-carousel">
-			<div id="photo-carousel-overlay">
-			</div>
-			<div class="carouselContainer" id="photoCarouselContainer">
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/1.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
+	<div class="background rellax" data-rellax-speed="8">
+		<img class="backgroundImage" src="../assets/slideshow/12.jpg"></img>
+		<img class="backgroundImage" src="../assets/slideshow/11.jpg"></img>
+	</div>
 
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/2.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage landscape" src="../assets/slideshow/3.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/4.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/5.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage landscape" src="../assets/slideshow/6.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/7.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/8.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage landscape" src="../assets/slideshow/9.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/10.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage landscape" src="../assets/slideshow/11.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/12.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/13.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage" src="../assets/slideshow/14.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage landscape" src="../assets/slideshow/15.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage landscape" src="../assets/slideshow/16.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage landscape" src="../assets/slideshow/17.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-
-				<div class="carouselItem">
-					<img class="carouselImage landscape" src="../assets/slideshow/18.jpg"></img>
-					<div class="carouselImageOverlay"></div>
-				</div>
-			</div>
-
-			<div class="carouselGlobalText no-bg">
-				<h1 class="carouselHeading">Christy & Rob's <br /> Wedding</h1>
-				<p class="carouselSubHeading">26 . 09 . 2020</p>
-			</div>
+	<div class="foreground rellax">
+		<div class="pageSection" id="home">
+			<span class="landingText">Christy & Rob's<br />Wedding</span>
+			<span class="landingSubText">26 09 2020 | San Souci</span>
+			<a class="rsvpButton" href="#rsvp-form">RSVP</a>
 		</div>
-
 		<div class="pageSection" id="about-us">
-			<div class="aboutUsContainer">
-				<div class="aboutUsRow" id="christy-row">
-					<div class="aboutUsPhotoContainer">
-						<img src="../assets/slideshow/christy.jpg" alt="" class="aboutUsPhoto" />
+			<div class="pageHeader">
+				<h1 class="pageHeading">
+					About Us
+				</h1>
+			</div>
+			<div class="aboutUsRowContainer">
+				<div class="aboutUsRow">
+					<div class="aboutUsColumn christy">
+						<div class="profilePhotoContainer">
+							<img src="../assets/slideshow/christy.jpg" alt="" class="profilePhoto">
+						</div>
+	
+						<div class="profileFactsContainer">
+							<h3 class="profileName">Christy Cheung</h3>
+							<ul class="profileFacts">
+								<li>Is the bride</li>
+								<li>Is a girl</li>
+								<li>Is pretty</li>
+							</ul>
+						</div>
 					</div>
-					<div class="aboutUsDescription">
-						<p class="aboutUsName">Christy Cheung</p>
-						<ul class="aboutUsFacts">
-							<li class="factItem"><p>Is a girl</p></li>
-							<li class="factItem"><p>Is the bride</p></li>
-							<li class="factItem"><p>Is pretty</p></li>
-						</ul>
+					<div class="aboutUsColumn rob">
+						<div class="profilePhotoContainer">
+							<img src="../assets/slideshow/rob.jpg" alt="" class="profilePhoto">
+						</div>
+
+						<div class="profileFactsContainer">
+							<h3 class="profileName">Robinson Lam</h3>
+							<ul class="profileFacts">
+								<li>Is the groom</li>
+								<li>Is a guy</li>
+								<li>Is also pretty</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<div class="aboutUsRow" id="rob-row">
-					<div class="aboutUsPhotoContainer">
-						<img src="../assets/slideshow/rob.jpg" alt="" class="aboutUsPhoto" />
-					</div>
-					<div class="aboutUsDescription">
-						<p class="aboutUsName">Robinson Lam</p>
-						<ul class="aboutUsFacts">
-							<li class="factItem"><p>Is a guy</p></li>
-							<li class="factItem"><p>Is the groom</p></li>
-							<li class="factItem"><p>Is hungry</p></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="pageSection" id="our-story">
-			<div class="ourStoryContainer">
-			</div>
-		</div>
-	</div>
-
-	<div class="pageFooter">
-	</div>
-
-	<div class="" style="display: none;">
-
-		<div class="section">
-			<div class="container" data-anchor="the-ceremony">
-				<h2 class="sectionTitle">The Ceremony</h2>
-				<div class="textSection">
-					<h3>4:00 PM</h3>
-					<p>Depena Reserve, Russell Ave, Dolls Point, <br /> New South Wales, Australia</p>
-				</div>
-
-				<div class="textSection">
-					<p>Ceremony is followed by photographs.<br />
-						Light afternoon tea will be provided.</p>
-				</div>
 
 			</div>
 		</div>
-
-		<div class="section">
-			<div class="container" data-anchor="the-reception">
-				<h2 class="sectionTitle">The Reception</h2>
-
-				<div class="textSection">
-					<h3>6:00 PM to 11:00 PM</h3>
-					<p><em>Georges River Sailing Club</em> <br /> Sanoni Avenue, Sandringham, New South Wales, Australia</p>
-				</div>
-
-				<div class="textSection">
-					<p>There will be canapes and a three-course dinner, as well as music and dancing!</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="container" data-anchor="getting-there">
-				<h2 class="sectionTitle">Getting There</h2>
-
-				<div class="textSection">
-					<h3>Driving</h3>
-					<p>Please park at the car park of Georges River 16ft Sailing Club.
-						The ceremony location is just to the left as you exit the car park towards Peter Depena Reserve.</p>
-				</div>
-
-				<div class="textSection">
-					<h3>Georges River Sailing Club Courtesy Bus</h3>
-					<p>An hourly courtesy bus is available from the Georges River Sailing Club for pick ups and drop offs
-						(pick up is free but drop off is $3) within a 5 km radius, i.e. from Kogarah Station. The bus runs
-						from 1 pm to 11 pm.
-						Please call 0410 424 408 to make your own arrangements, or see <a
-							href="https://georgesriversailingclub.com.au/"
-							target="_blank">https://georgesriversailingclub.com.au/</a> for more information.</p>
-				</div>
-
-				<div class="textSection">
-					<h3>Public Transport</h3>
-					<p>There are various buses from nearby stations with stops nearby. Please see <a
-							href="https://transportnsw.info/trip/" target="_blank">https://transportnsw.info/trip/</a> to
-						organise your trip.</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="container">
-				<h2 class="sectionTitle">RSVP</h2>
-
-				<div class="textSection">
-					<form name="weddingRsvpForm" id="weddingRsvpForm">
-
-						<div>
-							<label>Your Name</label>
-							<input type="text" name="guest_name" placeholder="Your Name" />
-						</div>
-
-						<div>
-							<label>Number of Guests</label>
-							<input type="text" name="number_attending" placeholder="Number of Guests" />
-						</div>
-
-						<div>
-							<label>Dietary Requirements</label>
-							<input type="text" name="diet_requirements" placeholder="Vegetarian, Allergies etc..." />
-						</div>
-
-						<div>
-							<label>Song Suggestions</label>
-							<input type="text" name="song_suggestions" placeholder="Song Suggestions" />
-						</div>
-
-						<div>
-							<button type="submit" id="submit-form">Submit RSVP</button>
-						</div>
-					</form>
-
-				</div>
-
-			</div>
-
+		<div class="pageSection" id="rsvp-form">
 
 		</div>
 	</div>
