@@ -50,9 +50,12 @@ module.exports = {
       },
        {
           test: /\.(woff(2)?|ttf|eot|svg|png|svg|jpg|gif)$/,
-          use: [
-            'file-loader',
-          ],
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/',
+            publicPath: '/assets/'
+          },
+          loader: 'file-loader',
         }
      ],
    },

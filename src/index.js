@@ -14,13 +14,6 @@ import 'bootstrap';
 
 import Rellax from 'rellax';
 
-import img12 from './assets/slideshow/12.jpg';
-import img17 from './assets/slideshow/17.jpg';
-import img15 from './assets/slideshow/15.jpg';
-import img16 from './assets/slideshow/16.jpg';
-import imgRob from './assets/slideshow/rob-1.jpg';
-import imgChristy from './assets/slideshow/christy-1.jpg';
-
 $(document).ready(() => {
     // RSVP FORM SCRIPT
     var $form = $('form#weddingRsvpForm'),
