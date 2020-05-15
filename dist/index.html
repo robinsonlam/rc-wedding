@@ -1,1 +1,101 @@
-<!doctype html> <html> <head> <meta charset=utf-8 /> <title><%= htmlWebpackPlugin.options.title %></title> </head> <body> <div id=globalNavigation> <nav> <a class=navigationItem href=#about-us> About Us </a> <a class=navigationItem href=#the-ceremony> The Ceremony </a> <div class=logoContainer> <p class=logoText>Christy & Rob's <br/> Wedding</p> </div> <a class=navigationItem href=#the-reception> The Reception </a> <a class=navigationItem href=#getting-there> Getting There </a> </nav> </div> <div class="background rellax" data-rellax-speed=10> <img class=backgroundImage src=/assets/12.jpg> <img class=backgroundImage src=/assets/17.jpg> <img class=backgroundImage src=/assets/15.jpg> <img class=backgroundImage src=/assets/16.jpg> </div> <div class="foreground rellax" data-rellax-speed=-4> <div class=pageSection id=home> <span class=landingText>Christy & Rob's<br/>Wedding</span> <span class=landingSubText>26 09 2020 | San Souci</span> <a class=rsvpButton href=#rsvp-form>RSVP</a> </div> <div class=pageSection id=about-us> <div class=pageHeader> <h1 class=pageHeading> About Us </h1> </div> <div class=aboutUsRowContainer> <div class=aboutUsRow> <div class="aboutUsColumn christy"> <div class=profilePhotoContainer> <img src=/assets/christy-1.jpg alt="" class=profilePhoto>  </div> <div class=profileFactsContainer> <h3 class=profileName>Christy Cheung</h3> <ul class=profileFacts> <li>Is the bride</li> <li>Is a girl</li> <li>Is pretty</li> </ul> </div> </div> <div class="aboutUsColumn rob"> <div class=profilePhotoContainer> <img src=/assets/rob-1.jpg alt="" class=profilePhoto> </div> <div class=profileFactsContainer> <h3 class=profileName>Robinson Lam</h3> <ul class=profileFacts> <li>Is the groom</li> <li>Is a guy</li> <li>Is also pretty</li> </ul> </div> </div> </div> </div> </div> <div class="pageSection transparent" id=rsvp-form> <div class=pageHeader> <h1 class=pageHeading> Our Story </h1> </div> <div class=ourStoryCOntainer> <p></p> </div> </div> </div> <script type="text/javascript" src="main.js"></script></body> </html>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Christy & Rob's Wedding</title>
+</head>
+
+<body>
+	<div id="globalNavigation">
+		<nav>
+			<a class="navigationItem" href="#about-us">
+				About Us
+			</a>
+			<a class="navigationItem" href="#the-ceremony">
+				The Ceremony
+			</a>
+
+			<div class="logoContainer">
+				<p class="logoText">Christy & Rob's <br /> Wedding</p>
+			</div>
+
+			<a class="navigationItem" href="#the-reception">
+				The Reception
+			</a>
+
+			<a class="navigationItem" href="#getting-there">
+				Getting There
+			</a>
+		</nav>
+	</div>
+	
+
+	<div class="background rellax" data-rellax-speed="10">
+		<img class="backgroundImage" src="../assets/12.jpg"></img>
+		<img class="backgroundImage" src="../assets/17.jpg"></img>
+		<img class="backgroundImage" src="../assets/15.jpg"></img>
+		<img class="backgroundImage" src="../assets/16.jpg"></img>
+	</div>
+
+	<div class="foreground rellax" data-rellax-speed="-4">
+		<div class="pageSection" id="home">
+			<span class="landingText">Christy & Rob's<br />Wedding</span>
+			<span class="landingSubText">26 09 2020 | San Souci</span>
+			<a class="rsvpButton" href="#rsvp-form">RSVP</a>
+		</div>
+		<div class="pageSection" id="about-us">
+			<div class="pageHeader">
+				<h1 class="pageHeading">
+					About Us
+				</h1>
+			</div>
+			<div class="aboutUsRowContainer">
+				<div class="aboutUsRow">
+					<div class="aboutUsColumn christy">
+						<div class="profilePhotoContainer">
+							<img src="../assets/christy-1.jpg" alt="" class="profilePhoto">
+							</img>
+						</div>
+	
+						<div class="profileFactsContainer">
+							<h3 class="profileName">Christy Cheung</h3>
+							<ul class="profileFacts">
+								<li>Is the bride</li>
+								<li>Is a girl</li>
+								<li>Is pretty</li>
+							</ul>
+						</div>
+					</div>
+					<div class="aboutUsColumn rob">
+						<div class="profilePhotoContainer">
+							<img src="../assets/rob-1.jpg" alt="" class="profilePhoto"></img>
+						</div>
+
+						<div class="profileFactsContainer">
+							<h3 class="profileName">Robinson Lam</h3>
+							<ul class="profileFacts">
+								<li>Is the groom</li>
+								<li>Is a guy</li>
+								<li>Is also pretty</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="pageSection transparent" id="rsvp-form">
+			<div class="pageHeader">
+				<h1 class="pageHeading">
+					Our Story
+				</h1>
+			</div>
+			<div class="ourStoryCOntainer">
+				<p></p>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>
