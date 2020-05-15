@@ -14,23 +14,12 @@ import 'bootstrap';
 
 import Rellax from 'rellax';
 
-// Initializing it
-// var fullPageInstance = new fullpage('#fullpage', {
-//     navigation: true,
-//     sectionsColor:['#b76e79', '#d1e3ff', '#b76e79', 'd1e3ff', '#b76e79', 'd1e3ff'],
-//     afterRender: function () {
-//         $('#carouselPhotos').slick({
-//             dots: true,
-//             infinite: true,
-//             speed: 300,
-//             slidesToShow: 1,
-//             variableWidth: true
-//         });
-//     }
-// });
-
-
-
+import img12 from './assets/slideshow/12.jpg';
+import img17 from './assets/slideshow/17.jpg';
+import img15 from './assets/slideshow/15.jpg';
+import img16 from './assets/slideshow/16.jpg';
+import imgRob from './assets/slideshow/rob.jpg';
+import imgChristy from './assets/slideshow/christy.jpg';
 
 $(document).ready(() => {
     // RSVP FORM SCRIPT
