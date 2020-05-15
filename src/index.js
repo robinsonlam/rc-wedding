@@ -18,8 +18,8 @@ import img12 from './assets/slideshow/12.jpg';
 import img17 from './assets/slideshow/17.jpg';
 import img15 from './assets/slideshow/15.jpg';
 import img16 from './assets/slideshow/16.jpg';
-import imgRob from './assets/slideshow/rob.JPG';
-import imgChristy from './assets/slideshow/christy.JPG';
+import imgRob from './assets/slideshow/rob.jpg';
+import imgChristy from './assets/slideshow/christy.jpg';
 
 $(document).ready(() => {
     // RSVP FORM SCRIPT
