@@ -16,16 +16,13 @@ module.exports = {
     path: path.resolve(__dirname, '../dist')
   },
   devServer: {
+    watchContentBase: true,
     contentBase: path.join(__dirname, '../dist'),
     publicPath: '/',
     port: 8080
   },
   module: {
      rules: [
-        {
-          test: /\.html$/i,
-          loader: 'html-loader',
-        },
        {
          test: /\.css$/,
          use: [

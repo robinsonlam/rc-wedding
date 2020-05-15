@@ -1,7 +1,3 @@
-import html from './pages/index.html';
-
-import fullpage from 'fullpage.js';
-
 // Styles
 import styles from './styles/main.scss';
 
