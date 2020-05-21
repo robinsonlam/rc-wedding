@@ -9,9 +9,10 @@ import 'slick-carousel';
 import 'bootstrap';
 
 // Import so that it puts images into assets folder
-import './assets/landing.jpg';
+import './assets/landing-1920-filtered.jpg';
 import './assets/depena-reserve.jpg';
 import './assets/sailing-club.jpg';
+import './assets/heart-divider-brown.png';
 import './assets/17.jpg';
 import './assets/15.jpg';
 import './assets/16.jpg';

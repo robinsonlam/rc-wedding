@@ -112,7 +112,6 @@ html {
 
 .pageSection {
     width: 100%;
-    padding: 0 20px;
 
     &.contained {
         background: $color-white;
@@ -142,6 +141,7 @@ html {
 .pageHeading {
     position: relative;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .pageHeaderPhotoContainer {
@@ -170,7 +170,7 @@ html {
 
 .pageSection.home {
     width: 960px;
-    padding: 100px 0;
+    padding: 100px 0 420px;
 
     margin: 0 auto;
     
@@ -234,18 +234,26 @@ html {
 .aboutUsColumn {
     width: 50%;
 
-    padding: 0 20px;
+    padding: 0 30px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     text-align: center;
+
+    &.christy {
+        border-right: 1px solid $color-pale-blue;
+    }
+
+    &.rob {
+        border-left: 1px solid $color-pale-blue;
+    }
 }
 
 .profilePhotoContainer {
-    width: 160px;
-    height: 160px;
+    width: 260px;
+    height: 260px;
 
     border-radius: 100%;
     overflow: hidden;
@@ -261,9 +269,10 @@ html {
 }
 
 .profileFactsList {
-    
     & li {
-        margin-bottom: 15px;
+        padding: 0 20px;
+        margin-bottom: 10px;
+        line-height: 1.4em;
     }
 }
 
@@ -277,7 +286,7 @@ html {
 .profileSubTitle {
     width: fit-content;
 
-    margin: 10px auto 40px;
+    margin: 10px auto 20px;
 
     padding-top: 10px;
     border-top: 2px solid $color-text-brown;
@@ -293,25 +302,20 @@ html {
 }
 
 .pageSection.our-story, #reception {
-    padding-bottom: $header-height;
-    background: rgba($color-text-black, 0.8);
-    color: $color-white;
-
     & h1.pageHeading {
-        color: $color-white;
     }
 }
 
 .ourStoryContainer, .receptionContainer {
     text-align: center;
-    width: 960px;
     padding: 0 40px;
     margin: 0 auto;
 }
 
 .ourStoryText {
-    color: $color-white;
     line-height: 1.8em;
+    padding: 0 20px;
+    margin: 0;
 }
 
 // Ceremony
