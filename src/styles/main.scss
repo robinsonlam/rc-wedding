@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Raleway:wght@100;200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Raleway:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
 @import "reset.css";
 
@@ -7,6 +7,9 @@
 $color-white: #fafafa;
 $color-text-black: #33424E;
 $color-text-brown: #8F857B;
+$color-text-dark-brown: darken(#8F857B, 0.6);
+
+$container-width: 960px;
 
 /* Font Styles */
 
@@ -21,15 +24,15 @@ body {
     background: $color-white;
 }
 
-h1 { font-size: 3.00em; font-weight: 700; color: $color-text-black; margin-bottom: 0.67em; letter-spacing: 0.13em; }
+h1 { font-size: 3.00em; font-weight: 700; color: $color-text-black; margin-bottom: 0.67em; letter-spacing: 0.056em; }
 h2 { font-size: 2.50em; font-weight: 400; color: $color-text-black; margin-bottom: 0.67em }
-h3 { font-size: 1.57em; font-weight: 400; color: $color-text-black; margin-bottom: 0.67em; letter-spacing: 0.13em; }
+h3 { font-size: 1.57em; font-weight: 400; color: $color-text-black; margin-bottom: 0.67em; letter-spacing: 0.056em; }
 h4 { font-size: 1.00em; font-weight: 400; color: $color-text-black; }
 h5 { font-size: 0.83em; font-weight: 400; color: $color-text-black; }
 h6 { font-size: 0.67em; font-weight: 400; color: $color-text-black; }
 
 p { margin-bottom: 1em; line-height: 1.6em; font-weight: 300; }
-
+em { font-style: italic; }
 
 
 /* Global Styles */
@@ -101,26 +104,6 @@ html {
 
 //  Parallax
 
-.background, .foreground {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 80px;
-}
-
-.background {
-    z-index: 1;
-}
-
-.backgroundImage {
-    width: 100%;
-    filter: contrast(90%) brightness(70%);
-}
-
-.foreground {
-    z-index: 2;
-}
-
 .pageSection {
     width: 100%;
 }
@@ -149,8 +132,9 @@ html {
 }
 
 #home {
-    padding-top: 40px;
-    height: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 520px;
     
     display: flex;
     align-items: center;
@@ -175,20 +159,29 @@ html {
     color: white;
     font-size: 24px;
 
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .rsvpButton {
-    background: $color-text-black;
-    padding: 10px 40px;
+    margin-top: 20px;
+    background: $color-text-brown;
+    padding: 15px 50px;
     color: $color-white;
     text-decoration: none;
+    letter-spacing: 0.4em;
+    border-radius: 1px;
+
+    transition: all 0.16s ease-in-out;
+}
+
+.rsvpButton:hover {
+    background: $color-text-dark-brown;
 }
 
 
 #about-us {
     background: $color-white;
-    height: 640px;
+    padding-bottom: 60px;
 }
 
 .aboutUsRowContainer {
@@ -196,7 +189,7 @@ html {
 }
 
 .aboutUsRow {
-    width: 960px;
+    width: $container-width;
     margin: 0 auto;
     display: flex;
 }
@@ -204,10 +197,12 @@ html {
 .aboutUsColumn {
     width: 50%;
 
+    padding: 0 20px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
 }
 
@@ -217,6 +212,8 @@ html {
 
     border-radius: 100%;
     overflow: hidden;
+
+    margin-bottom: 40px;
 }
 
 .profilePhoto {
@@ -224,22 +221,31 @@ html {
 }
 
 .profileFactsContainer {
-    padding: 20px;
+}
+
+.profileFactsList {
+    
+    & li {
+        margin-bottom: 15px;
+    }
 }
 
 .profileName {
     font-weight: bold;
-}
-
-.profileFactsContainer {
-
-}
-
-.profileName {
     margin-top: 10px;
-    margin-bottom: 40px;
-    padding: 0 20px 20px;
-    border-bottom: 2px solid $color-text-brown;
+    padding: 0 20px 0px;
+    margin: 0;
+}
+
+.profileSubTitle {
+    width: fit-content;
+
+    margin: 10px auto 40px;
+
+    padding-top: 10px;
+    border-top: 2px solid $color-text-brown;
+
+    color: $color-text-brown;
 }
 
 .profileFacts {
@@ -247,4 +253,53 @@ html {
         position: relative;
         margin-bottom: 20px;
     }
+}
+
+#our-story, #reception {
+    padding-bottom: 60px;
+    background: rgba($color-text-black, 0.8);
+    color: $color-white;
+
+    & h1.pageHeading {
+        color: $color-white;
+    }
+}
+
+.ourStoryContainer, .receptionContainer {
+    text-align: center;
+    width: 960px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+.ourStoryText {
+    color: $color-white;
+    line-height: 1.8em;
+}
+
+// Ceremony
+
+#the-ceremony, #getting-there {
+    padding-bottom: 40px;
+}
+
+.theCeremonyContainer {
+    text-align: center;
+    width: 960px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+// Reception
+
+#reception {
+    h3 {
+        color: $color-white;
+    }
+}
+
+// Getting There
+
+.receptionSection {
+    margin-bottom: 40px;
 }

@@ -8,7 +8,14 @@ import 'slick-carousel';
 
 import 'bootstrap';
 
-import Rellax from 'rellax';
+// Import so that it puts images into assets folder
+import './assets/landing.jpg';
+import './assets/17.jpg';
+import './assets/15.jpg';
+import './assets/16.jpg';
+
+import './assets/rob-1.jpg';
+import './assets/christy-1.jpg';
 
 $(document).ready(() => {
     // RSVP FORM SCRIPT
@@ -26,15 +33,6 @@ $(document).ready(() => {
                 alert("form sent")
             }
         });
-    });
-
-    var rellax = new Rellax('.rellax', {
-        speed: 0,
-        center: false,
-        wrapper: null,
-        round: true,
-        vertical: true,
-        horizontal: false
     });
 });
 

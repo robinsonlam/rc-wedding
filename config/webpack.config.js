@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+ 
 module.exports = {
   entry: './src/index.js',
   plugins: [
@@ -9,17 +9,14 @@ module.exports = {
       title: "Christy & Rob's Wedding",
       template: 'src/pages/index.html'
     }),
+    new CleanWebpackPlugin({
+      verbose: true
+    }),
   ],
   devtool: 'inline-source-map',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, '../dist')
-  },
-  devServer: {
-    watchContentBase: true,
-    contentBase: path.join(__dirname, '../dist'),
-    publicPath: '/',
-    port: 8080
   },
   module: {
      rules: [
@@ -45,7 +42,7 @@ module.exports = {
 					}
         ]
       },
-       {
+      {
           test: /\.(woff(2)?|ttf|eot|svg|png|svg|jpg|gif)$/,
           options: {
             name: '[name].[ext]',
