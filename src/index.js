@@ -10,6 +10,8 @@ import 'bootstrap';
 
 // Import so that it puts images into assets folder
 import './assets/landing.jpg';
+import './assets/depena-reserve.jpg';
+import './assets/sailing-club.jpg';
 import './assets/17.jpg';
 import './assets/15.jpg';
 import './assets/16.jpg';

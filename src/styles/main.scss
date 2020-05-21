@@ -112,6 +112,9 @@ html {
     width: 100%;
 
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
     justify-content: center;
     text-align: center;
 
@@ -119,6 +122,21 @@ html {
 }
 
 .pageHeading {
+    width: 100%;
+}
+
+.pageHeaderPhotoContainer {
+    width: 500px;
+
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    border: 2px solid $color-white;
+}
+
+.pageHeaderPhoto {
+    width: 100%;
 }
 
 .pageSection.transparent {
@@ -302,4 +320,8 @@ html {
 
 .receptionSection {
     margin-bottom: 40px;
+}
+
+.gettingThereMap {
+    width: 100%;
 }
