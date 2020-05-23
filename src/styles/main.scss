@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Raleway:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&Pinyon+Script&family=Raleway:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
 @import "reset.css";
 
@@ -8,7 +8,7 @@ $color-white: #fafafa;
 $color-pale-blue: #eef2f6;
 $color-text-black: #33424E;
 $color-text-brown: #8F857B;
-$color-text-dark-brown: darken(#8F857B, 0.6);
+$color-text-dark-brown: #62594f;
 
 $container-width: 960px;
 
@@ -107,11 +107,9 @@ html {
     color: $color-text-black;
 }
 
-
-//  Parallax
-
 .pageSection {
     width: 100%;
+    padding-bottom: 40px;
 
     &.contained {
         background: $color-white;
@@ -144,13 +142,19 @@ html {
     margin-bottom: 20px;
 }
 
-.pageHeaderPhotoContainer {
-    width: $container-width;
-    padding: 0 40px;
+.heartDividerContainer {
+    width: 100%;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageHeaderPhotoContainer {
+    width: 500px;
+    height: 260px;
     overflow: hidden;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 20px auto 0;
 }
 
 .pageHeaderPhoto {
@@ -170,7 +174,8 @@ html {
 
 .pageSection.home {
     width: 960px;
-    padding: 100px 0 420px;
+    padding: 80px 0 120px;
+    // padding: 100px 0 420px;
 
     margin: 0 auto;
     
@@ -183,14 +188,14 @@ html {
 }
 
 .landingText {
-    font-family: "Pinyon Script";
+    font-family: "Sofia";
     color: white;
     font-weight: bold;
     line-height: 1.1em;
 
-    font-size: 72px;
+    font-size: 58px;
 
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .landingSubText {
@@ -214,11 +219,6 @@ html {
 
 .rsvpButton:hover {
     background: $color-text-dark-brown;
-}
-
-
-.pageSection.about-us {
-    padding-bottom: 60px;
 }
 
 .aboutUsRowContainer {
@@ -301,11 +301,6 @@ html {
     }
 }
 
-.pageSection.our-story, #reception {
-    & h1.pageHeading {
-    }
-}
-
 .ourStoryContainer, .receptionContainer {
     text-align: center;
     padding: 0 40px;
@@ -320,25 +315,14 @@ html {
 
 // Ceremony
 
-.pageSection.the-ceremony, #getting-there {
-    padding-bottom: 60px;
-}
-
 .theCeremonyContainer {
     text-align: center;
-    width: 960px;
+    width: 100%px;
     padding: 0 40px;
     margin: 0 auto;
 }
 
 // Reception
-
-.pageSection.reception {
-    h3 {
-        color: $color-white;
-    }
-}
-
 // Getting There
 
 .receptionSection {
@@ -346,5 +330,17 @@ html {
 }
 
 .gettingThereMap {
+    width: 100%;
+}
+
+// seperator imags
+
+.seperatorImageContainer {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.seperatorImage {
     width: 100%;
 }

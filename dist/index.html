@@ -36,7 +36,7 @@
 		</nav>
 	</div>
 
-	<div class="pageSection home" style="background: url('assets/landing-1920-filtered.jpg') no-repeat top center;
+	<div class="pageSection home" style="background: url('assets/temple-cropped-colored.jpg') no-repeat top center;
 	    -webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -53,8 +53,16 @@
 				<span class="navSpacer" id="our-story"></span>
 				Our Story
 			</h1>
-			<img src="/assets/heart-divider-brown.png" style="width: 300px; margin: -20px 0;" />
+
+			<div class="heartDividerContainer">
+				<img src="/assets/heart-divider-brown.png" style="width: 300px; margin: -20px 0;" />
+			</div>
+
+			<div class="pageHeaderPhotoContainer">
+				<img class="pageHeaderPhoto" src="assets/shadow-cropped.jpg" />
+			</div>
 		</div>
+
 		<div class="ourStoryContainer">
 			<p class="ourStoryText">
 				On a night like any other, a girl and a boy began an adventure of a lifetime. Out with his boys, Rob came to Star Bar (a sacred establishment to many) to meet up with his friend, Peter, who was at a university event. There, he spotted a girl who looked a little (who is he kidding, a lot!) like the girl of his dreams. That girl was Christy (obviously). He tried to chat (got nowhere) and he even tried a goodbye hug when parting (only to be thwarted by her friend, Lina).
@@ -116,15 +124,23 @@
 		</div>
 	</div>
 
-	<div class="pageSection the-ceremony">
+	<div class="pageSection the-ceremony contained">
+		<div class="seperatorImageContainer">
+			<img class="seperatorImage" src="assets/taj-cropped.jpg" />
+		</div>
+		
 		<div class="pageHeader">
 			<h1 class="pageHeading">
 				<span class="navSpacer" id="the-ceremony"></span>
 				The Ceremony
 			</h1>
 
+			<div class="heartDividerContainer">
+				<img src="/assets/heart-divider-brown.png" style="width: 300px; margin: -20px 0;" />
+			</div>
+
 			<div class="pageHeaderPhotoContainer">
-				<img class="pageHeaderPhoto" src="assets/depena-reserve.jpg" />
+				<img class="pageHeaderPhoto" src="assets/depena-reserve-cropped.jpg" />
 			</div>
 		</div>
 		<div class="theCeremonyContainer">
@@ -141,12 +157,19 @@
 		</div>
 	</div>
 
-	<div class="pageSection reception">
+	<div class="pageSection reception  contained">
+		<div class="seperatorImageContainer">
+			<img class="seperatorImage" src="assets/river-cropped.jpg" />
+		</div>
+
 		<div class="pageHeader">
 			<h1 class="pageHeading">
 				<span class="navSpacer" id="reception"></span>
 				The Reception
 			</h1>
+			<div class="heartDividerContainer">
+				<img src="/assets/heart-divider-brown.png" style="width: 300px; margin: -20px 0;" />
+			</div>
 
 			<div class="pageHeaderPhotoContainer">
 				<img class="pageHeaderPhoto" src="assets/sailing-club.jpg" />
@@ -162,7 +185,11 @@
 		</div>
 	</div>
 
-	<div class="pageSection getting-there">
+	<div class="pageSection getting-there  contained">
+		<div class="seperatorImageContainer">
+			<img class="seperatorImage" src="assets/window-cropped.jpg" />
+		</div>
+
 		<div class="pageHeader">
 			<h1 class="pageHeading">
 				<span class="navSpacer" id="getting-there"></span>
@@ -200,8 +227,33 @@
 	</div>
 	
 
-	<div class="pageSection rsvp-form">
+	<div class="pageSection rsvp-form  contained">
+		<form name="weddingRsvpForm" id="weddingRsvpForm">
 
+			<div>
+				<label>Your Name</label>
+				<input type="text" name="guest_name" placeholder="Your Name" />
+			</div>
+
+			<div>
+				<label>Number of Guests</label>
+				<input type="text" name="number_attending" placeholder="Number of Guests" />
+			</div>
+
+			<div>
+				<label>Dietary Requirements</label>
+				<input type="text" name="diet_requirements" placeholder="Vegetarian, Allergies etc..." />
+			</div>
+
+			<div>
+				<label>Song Suggestions</label>
+				<input type="text" name="song_suggestions" placeholder="Song Suggestions" />
+			</div>
+
+			<div>
+				<button type="submit" id="submit-form">Submit RSVP</button>
+			</div>
+		</form>
 	</div>
 
 	<script src="http://localhost:4567/livereload.js"></script>
