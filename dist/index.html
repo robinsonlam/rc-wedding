@@ -228,31 +228,32 @@
 	
 
 	<div class="pageSection rsvp-form  contained">
+		<div class="seperatorImageContainer" 	style="height:auto;">
+			<img class="seperatorImage" src="assets/luka-cropped.jpg"/>
+		</div>
+
 		<form name="weddingRsvpForm" id="weddingRsvpForm">
-
 			<div>
-				<label>Your Name</label>
-				<input type="text" name="guest_name" placeholder="Your Name" />
+				<label>Number of people attending</label>
+				<input type="text" id="number_attending" name="number_attending" placeholder="Number of people attending" />
 			</div>
 
-			<div>
-				<label>Number of Guests</label>
-				<input type="text" name="number_attending" placeholder="Number of Guests" />
+			<div id="guests-container">
+				<p>guests</p>
 			</div>
 
-			<div>
+			<div class="guest">
+				<label>Guest Name</label>
+				<input type="text" name="guest_name" placeholder="Guest Name" />
+
 				<label>Dietary Requirements</label>
 				<input type="text" name="diet_requirements" placeholder="Vegetarian, Allergies etc..." />
-			</div>
 
-			<div>
 				<label>Song Suggestions</label>
 				<input type="text" name="song_suggestions" placeholder="Song Suggestions" />
 			</div>
 
-			<div>
-				<button type="submit" id="submit-form">Submit RSVP</button>
-			</div>
+			<button type="submit" id="submit-form">Submit RSVP</button>
 		</form>
 	</div>
 
