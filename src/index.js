@@ -9,6 +9,7 @@ import 'slick-carousel';
 import 'bootstrap';
 
 // Import so that it puts images into assets folder
+import './assets/shadow-cropped.jpg';
 import './assets/luka-cropped.jpg';
 import './assets/temple-cropped-colored.jpg';
 import './assets/depena-reserve-cropped.jpg';
