@@ -17,7 +17,7 @@ import './assets/heart-divider-brown.png';
 import './assets/taj-cropped.jpg';
 import './assets/river-cropped.jpg';
 import './assets/window-cropped.jpg';
-import './assets/shadow-cropped.jpg';
+import './assets/shadow-cropped-1.jpg';
 
 import './assets/rob-1.jpg';
 import './assets/christy-1.jpg';
