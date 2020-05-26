@@ -350,8 +350,11 @@ html {
 }
 
 #weddingRsvpForm {
-    width: 400px;
+    width: 700px;
     margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 #guests-container {
@@ -362,23 +365,34 @@ html {
 }
 
 .guest {
-    width: 400px;
+    width: 100%;
     margin: 20px auto;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
 
     padding-bottom: 20px;
-
-    border-bottom: 2px solid $color-pale-blue;
 }
 
 .inputContainer {
-    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     margin: 10px 0;
+    padding: 0 10px;
+    
+    &.full {
+        width: 100%;
+    }
+
+    &.half {
+        width: 50%;
+    }
+
+    &.centered {
+        align-items: center;
+    }
 }
 
 .inputLabel {
@@ -396,6 +410,11 @@ html {
     background: none;
     border: none;
     border-bottom: 1px solid $color-text-brown;
+
+    &::placeholder {
+        color: $color-text-brown;
+        opacity: 0.4;
+    }
 }
 
 .textInput.number {
@@ -403,8 +422,20 @@ html {
 }
 
 .guestNumber {
+    width: 100%;
     font-weight: bold;
     align-self: flex-start;
     color: $color-text-brown;
     margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.submitRsvpButton {
+    cursor: pointer;
+    padding: 20px 40px;
+    font-size: 16px;
+
+    background: $color-text-black;
+    color: $color-pale-blue;
+    margin: 0 auto;
 }

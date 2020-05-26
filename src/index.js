@@ -22,7 +22,7 @@ import './assets/shadow-cropped-1.jpg';
 import './assets/rob-1.jpg';
 import './assets/christy-1.jpg';
 
-let numberOfGuests = 0;
+let numberOfGuests = 1;
 
 $(document).ready(() => {
     $('#number_attending').value = numberOfGuests;
@@ -53,6 +53,30 @@ $(document).ready(() => {
         }
     });
 
+    $('#guests-container').empty();
+    for (let x = 0; x < numberOfGuests; x++) {
+      var formHtml = $(`
+      <div class='guest'>
+        <h3 class="guestNumber">Guest #${x+1}:</h3>
+        <div class="inputContainer half">
+          <label class="inputLabel">Guest Name</label>
+          <input type='text' class="textInput" id='guest-${x}-name' name='guest_name' placeholder='Guest Name' />
+        </div>
+
+        <div class="inputContainer half">
+          <label class="inputLabel">Dietary Requirements</label>
+          <input type='text' class="textInput" id='guest-${x}-diet-requirements' name='diet_requirements' placeholder='Vegetarian, Allergies etc...' />
+        </div>
+
+        <div class="inputContainer full">
+          <label class="inputLabel">Song Suggestions</label>
+          <input type='text' class="textInput" id='guest-${x}-song-suggestions' name='song_suggestions' placeholder='Song Suggestions' />
+        </div>
+      `);
+
+      $('#guests-container').append(formHtml);
+    }
+
     $('#number_attending').change((e) => {
         numberOfGuests = parseInt(e.target.value);
         $('#guests-container').empty();
@@ -60,17 +84,17 @@ $(document).ready(() => {
           var formHtml = $(`
           <div class='guest'>
             <h3 class="guestNumber">Guest #${x+1}:</h3>
-            <div class="inputContainer">
+            <div class="inputContainer half">
               <label class="inputLabel">Guest Name</label>
               <input type='text' class="textInput" id='guest-${x}-name' name='guest_name' placeholder='Guest Name' />
             </div>
   
-            <div class="inputContainer">
+            <div class="inputContainer half">
               <label class="inputLabel">Dietary Requirements</label>
               <input type='text' class="textInput" id='guest-${x}-diet-requirements' name='diet_requirements' placeholder='Vegetarian, Allergies etc...' />
             </div>
   
-            <div class="inputContainer">
+            <div class="inputContainer full">
               <label class="inputLabel">Song Suggestions</label>
               <input type='text' class="textInput" id='guest-${x}-song-suggestions' name='song_suggestions' placeholder='Song Suggestions' />
             </div>
