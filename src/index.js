@@ -59,19 +59,20 @@ $(document).ready(() => {
         for (let x = 0; x < numberOfGuests; x++) {
           var formHtml = $(`
           <div class='guest'>
-            <div>
-              <label>Guest Name</label>
-              <input type='text' id='guest-${x}-name' name='guest_name' placeholder='Guest Name' />
+            <h3 class="guestNumber">Guest #${x}:</h3>
+            <div class="inputContainer">
+              <label class="inputLabel">Guest Name</label>
+              <input type='text' class="textInput" id='guest-${x}-name' name='guest_name' placeholder='Guest Name' />
             </div>
   
-            <div>
-              <label>Dietary Requirements</label>
-              <input type='text' id='guest-${x}-diet-requirements' name='diet_requirements' placeholder='Vegetarian, Allergies etc...' />
+            <div class="inputContainer">
+              <label class="inputLabel">Dietary Requirements</label>
+              <input type='text' class="textInput" id='guest-${x}-diet-requirements' name='diet_requirements' placeholder='Vegetarian, Allergies etc...' />
             </div>
   
-            <div>
-              <label>Song Suggestions</label>
-              <input type='text' id='guest-${x}-song-suggestions' name='song_suggestions' placeholder='Song Suggestions' />
+            <div class="inputContainer">
+              <label class="inputLabel">Song Suggestions</label>
+              <input type='text' class="textInput" id='guest-${x}-song-suggestions' name='song_suggestions' placeholder='Song Suggestions' />
             </div>
           `);
 

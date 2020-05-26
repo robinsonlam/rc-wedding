@@ -345,6 +345,66 @@ html {
     width: 100%;
 }
 
+#rsvp-form {
+    padding: 60px 0;
+}
+
+#weddingRsvpForm {
+    width: 400px;
+    margin: 0 auto;
+}
+
+#guests-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .guest {
-    margin: 20px 0;
+    width: 400px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 20px;
+
+    border-bottom: 2px solid $color-pale-blue;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.inputLabel {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 0;
+    line-height: 1em;
+}
+
+.textInput {
+    font-weight: 100;
+    font-size: 16px;
+    margin-top: 5px;
+    padding: 20px 10px 10px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid $color-text-brown;
+}
+
+.textInput.number {
+    min-width: 60px;
+}
+
+.guestNumber {
+    font-weight: bold;
+    align-self: flex-start;
+    color: $color-text-brown;
+    margin-bottom: 10px;
 }

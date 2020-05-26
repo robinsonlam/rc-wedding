@@ -233,24 +233,13 @@
 		</div>
 
 		<form name="weddingRsvpForm" id="weddingRsvpForm">
-			<div>
-				<label>Number of people attending</label>
-				<input type="text" id="number_attending" name="number_attending" placeholder="Number of people attending" />
+			<div class="inputContainer">
+				<label class="inputLabel">Number of people attending</label>
+				<input class="textInput number" type="number" min="1" max="99" id="number_attending" name="number_attending" placeholder="Number of people attending" />
 			</div>
 
 			<div id="guests-container">
-				<p>guests</p>
-			</div>
-
-			<div class="guest">
-				<label>Guest Name</label>
-				<input type="text" name="guest_name" placeholder="Guest Name" />
-
-				<label>Dietary Requirements</label>
-				<input type="text" name="diet_requirements" placeholder="Vegetarian, Allergies etc..." />
-
-				<label>Song Suggestions</label>
-				<input type="text" name="song_suggestions" placeholder="Song Suggestions" />
+				<span>&nbsp;</span>
 			</div>
 
 			<button type="submit" id="submit-form">Submit RSVP</button>
