@@ -59,7 +59,7 @@ $(document).ready(() => {
         for (let x = 0; x < numberOfGuests; x++) {
           var formHtml = $(`
           <div class='guest'>
-            <h3 class="guestNumber">Guest #${x}:</h3>
+            <h3 class="guestNumber">Guest #${x+1}:</h3>
             <div class="inputContainer">
               <label class="inputLabel">Guest Name</label>
               <input type='text' class="textInput" id='guest-${x}-name' name='guest_name' placeholder='Guest Name' />
