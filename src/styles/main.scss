@@ -415,6 +415,10 @@ html {
         color: $color-text-brown;
         opacity: 0.4;
     }
+
+    &.invalid {
+        background: rgba(red, 0.05);;
+    }
 }
 
 .textInput.number {
@@ -438,4 +442,25 @@ html {
     background: $color-text-black;
     color: $color-pale-blue;
     margin: 0 auto;
+    border: none;
+
+    &:disabled {
+        cursor: not-allowed;
+        background: lighten($color-text-black, 60%);
+        color: lighten($color-text-black, 80%);
+    }
+}
+
+#attending-select {
+    margin: 10px auto;
+    padding: 20px 10px 10px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid $color-text-brown;
+}
+
+label.invalid {
+    color: red;
+    margin-top: 10px;
 }

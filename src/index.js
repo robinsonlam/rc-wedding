@@ -4,6 +4,8 @@ import styles from './styles/main.scss';
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 
+import 'jquery-validation';
+
 import 'slick-carousel';
 
 import 'bootstrap';
@@ -31,80 +33,87 @@ $(document).ready(() => {
     var $form = $('form#weddingRsvpForm'),
         url = 'https://script.google.com/macros/s/AKfycbzKBO9PBckRlXfRPiruLpq2yOj6MwwlSUcDOHGlkoNfMtWntrqJ/exec'
 
-    $('#submit-form').on('click', function(e) {
-      e.preventDefault();
+    // $("#submit-form-button").prop('disabled', true);
+    // $("#submit-form-button").text('Please fill in the required details above');
 
-        for (let x = 0; x < $('.guest').length; x++) {
-          let guestName = $(`#guest-${x}-name`).val();
-          let guestDietRequirements = $(`#guest-${x}-diet-requirements`).val();
-          let guestSongSuggestion = $(`#guest-${x}-song-suggestions`).val();
+    $('#weddingRsvpForm').validate({
+      rules: {
+        guest_name: "required",
+        status: "required",
+        number_attending: "required"
+      },
+      errorClass: 'invalid',
+      invalidHandler: function(ev, validator) {
+        console.log("invalid ev:", ev)
+        console.log("invalid validator:", validator)
+      },
+      submitHandler: function(form) {
+          console.log("Submit button form:", form);
+          $('#submit-form-button').prop('disabled', true);
+          $('#submit-form-button').text('Sending RSVP...');
 
-          let formString = `number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
-          
-          var jqxhr = $.ajax({
-              url: url,
-              method: "GET",
-              dataType: "json",
-              data: formString,
-              success: function() {
-                  alert("form sent")
-              }
-          });
+
+          let hostName =  $(`#guest-${numberOfGuests - 1}-name`).val();
+          let hostStatus = $(`#attending-select`).val();
+  
+          for (let x = 0; x < numberOfGuests; x++) {
+            let guestName = $(`#guest-${x}-name`).val();
+            let guestDietRequirements = $(`#guest-${x}-diet-requirements`).val();
+            let guestSongSuggestion = $(`#guest-${x}-song-suggestions`).val();
+  
+            let formString = `your_name=${hostName}&status=${hostStatus}&number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
+            
+            var jqxhr = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json",
+                data: formString,
+                success: function() {
+                    $('#submit-form-button').prop('disabled', false);
+                    $('#submit-form-button').text('Submit Guests!');
+        
+                    alert("Thank you for submitting your RSVP!")
+                }
+            });
+          }
         }
-    });
+    })
 
-    $('#guests-container').empty();
-    for (let x = 0; x < numberOfGuests; x++) {
-      var formHtml = $(`
-      <div class='guest'>
-        <h3 class="guestNumber">Guest #${x+1}:</h3>
-        <div class="inputContainer half">
-          <label class="inputLabel">Guest Name</label>
-          <input type='text' class="textInput" id='guest-${x}-name' name='guest_name' placeholder='Guest Name' />
-        </div>
-
-        <div class="inputContainer half">
-          <label class="inputLabel">Dietary Requirements</label>
-          <input type='text' class="textInput" id='guest-${x}-diet-requirements' name='diet_requirements' placeholder='Vegetarian, Allergies etc...' />
-        </div>
-
-        <div class="inputContainer full">
-          <label class="inputLabel">Song Suggestions</label>
-          <input type='text' class="textInput" id='guest-${x}-song-suggestions' name='song_suggestions' placeholder='Song Suggestions' />
-        </div>
-      `);
-
-      $('#guests-container').append(formHtml);
-    }
+    createGuestFormItems(numberOfGuests);
 
     $('#number_attending').change((e) => {
         numberOfGuests = parseInt(e.target.value);
-        $('#guests-container').empty();
-        for (let x = 0; x < numberOfGuests; x++) {
-          var formHtml = $(`
-          <div class='guest'>
-            <h3 class="guestNumber">Guest #${x+1}:</h3>
-            <div class="inputContainer half">
-              <label class="inputLabel">Guest Name</label>
-              <input type='text' class="textInput" id='guest-${x}-name' name='guest_name' placeholder='Guest Name' />
-            </div>
-  
-            <div class="inputContainer half">
-              <label class="inputLabel">Dietary Requirements</label>
-              <input type='text' class="textInput" id='guest-${x}-diet-requirements' name='diet_requirements' placeholder='Vegetarian, Allergies etc...' />
-            </div>
-  
-            <div class="inputContainer full">
-              <label class="inputLabel">Song Suggestions</label>
-              <input type='text' class="textInput" id='guest-${x}-song-suggestions' name='song_suggestions' placeholder='Song Suggestions' />
-            </div>
-          `);
-
-          $('#guests-container').append(formHtml);
-        }
+        createGuestFormItems(numberOfGuests);
     });
 });
 
+function createGuestFormItems(guestAmount) {
+  $('#guests-container').empty();
+
+  for (let x = 0; x < guestAmount; x++) {
+    var formHtml = $(`
+    <div class='guest'>
+      <h3 class="guestNumber">Guest #${x+1}:</h3>
+      <div class="inputContainer half">
+        <label class="inputLabel">Guest Name<span style="font-size: 18px; margin: 0; color: red;">*</span></label>
+        <input required type='text' class="textInput" id='guest-${x}-name' name='guest_name' placeholder='Guest Name' />
+      </div>
+
+      <div class="inputContainer half">
+        <label class="inputLabel">Dietary Requirements</label>
+        <input type='text' class="textInput" id='guest-${x}-diet-requirements' name='diet_requirements' placeholder='Vegetarian, Allergies etc...' />
+      </div>
+
+      <div class="inputContainer full">
+        <label class="inputLabel">Song Suggestions</label>
+        <input type='text' class="textInput" id='guest-${x}-song-suggestions' name='song_suggestions' placeholder='Song Suggestions' />
+      </div>
+    `);
+
+    $('#guests-container').append(formHtml);
+  }
+}
+ 
 
 
 // data-parallax="scroll" data-image-src="../assets/slideshow/1.jpg"
