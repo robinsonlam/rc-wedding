@@ -53,29 +53,34 @@ $(document).ready(() => {
           $('#submit-form-button').text('Sending RSVP...');
 
 
-          let hostName =  $(`#guest-${numberOfGuests - 1}-name`).val();
+          let hostName =  $(`#guest-0-name`).val();
           let hostStatus = $(`#attending-select`).val();
+
+          let promises = [];
   
           for (let x = 0; x < numberOfGuests; x++) {
             let guestName = $(`#guest-${x}-name`).val();
             let guestDietRequirements = $(`#guest-${x}-diet-requirements`).val();
             let guestSongSuggestion = $(`#guest-${x}-song-suggestions`).val();
-  
             let formString = `your_name=${hostName}&status=${hostStatus}&number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
             
-            var jqxhr = $.ajax({
+            promises.push($.ajax({
                 url: url,
                 method: "GET",
                 dataType: "json",
-                data: formString,
-                success: function() {
-                    $('#submit-form-button').prop('disabled', false);
-                    $('#submit-form-button').text('Submit Guests!');
-        
-                    alert("Thank you for submitting your RSVP!")
-                }
-            });
+                data: formString
+            }));
           }
+
+          console.log(promises);
+
+          $.when.apply($, promises).done(( [responses] ) => {
+            console.log("responses: ",responses);
+            $('#submit-form-button').prop('disabled', false);
+            $('#submit-form-button').text('Submit Guests!');
+
+            alert("Thank you for submitting your RSVP!")
+          });
         }
     })
 
