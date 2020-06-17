@@ -254,14 +254,21 @@
 				</select>
 			</div>
 
-			<div class="inputContainer centered">
-				<label class="inputLabel">Total number of guests <span style="font-size: 18px; margin: 0; color: red;">*</span></label>
-				<input class="textInput number" style="width: 200px;" type="number" value="1" min="1" max="99" id="number_attending" name="number_attending" placeholder="Number of people attending" required />
-			</div>
+			<div class="horizontal">
+				<div class="inputContainer third">
+					<label class="inputLabel">Total number of guests <span style="font-size: 18px; margin: 0; color: red;">*</span></label>
+					<input class="textInput number" style="width: 200px;" type="number" value="1" min="1" max="99" id="number_attending" name="number_attending" placeholder="Number of people attending" required />
+				</div>
 
-			<div class="inputContainer centered">
-				<label class="inputLabel">Contact Email/Phone <span style="font-size: 18px; margin: 0; color: red;">*</span></label>
-				<input class="textInput" style="width: 200px;" type="text" id="contact_details" name="contact_details" placeholder="Contact email/phone" required />
+				<div class="inputContainer third">
+					<label class="inputLabel">Phone <span style="font-size: 18px; margin: 0; color: red;">*</span></label>
+					<input class="textInput" style="width: 200px;" type="text" id="phone" name="phone" placeholder="Contact phone number" required />
+				</div>
+
+				<div class="inputContainer third">
+					<label class="inputLabel">Email <span style="font-size: 18px; margin: 0; color: red;">*</span></label>
+					<input class="textInput" style="width: 200px;" type="text" id="email" name="email" placeholder="Contact email" required />
+				</div>
 			</div>
 	
 			<div id="guests-container">
