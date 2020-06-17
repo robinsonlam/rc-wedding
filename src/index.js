@@ -55,6 +55,7 @@ $(document).ready(() => {
 
           let hostName =  $(`#guest-0-name`).val();
           let hostStatus = $(`#attending-select`).val();
+          let contactDetails = $(`#contact_details`).val();
 
           let promises = [];
   
@@ -62,7 +63,7 @@ $(document).ready(() => {
             let guestName = $(`#guest-${x}-name`).val();
             let guestDietRequirements = $(`#guest-${x}-diet-requirements`).val();
             let guestSongSuggestion = $(`#guest-${x}-song-suggestions`).val();
-            let formString = `your_name=${hostName}&status=${hostStatus}&number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
+            let formString = `your_name=${hostName}&contact_details=${contactDetails}&status=${hostStatus}&number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
             
             promises.push($.ajax({
                 url: url,
