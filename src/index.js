@@ -55,16 +55,15 @@ $(document).ready(() => {
 
           let hostName =  $(`#guest-0-name`).val();
           let hostStatus = $(`#attending-select`).val();
-          let email = $(`#email`).val();
-          let phone = $(`#phone`).val();
-
           let promises = [];
   
           for (let x = 0; x < numberOfGuests; x++) {
             let guestName = $(`#guest-${x}-name`).val();
             let guestDietRequirements = $(`#guest-${x}-diet-requirements`).val();
             let guestSongSuggestion = $(`#guest-${x}-song-suggestions`).val();
-            let formString = `your_name=${hostName}&status=${hostStatus}&email=${email}&phone=${phone}&number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
+            let guestPhone = $(`#guest-${x}-phone`).val();
+            let guestEmail = $(`#guest-${x}-email`).val();
+            let formString = `your_name=${hostName}&status=${hostStatus}&email=${guestEmail}&phone=${guestPhone}&number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
           console.log(formString);
             
             promises.push($.ajax({
@@ -102,12 +101,22 @@ function createGuestFormItems(guestAmount) {
     var formHtml = $(`
     <div class='guest'>
       <h3 class="guestNumber">Guest #${x+1}:</h3>
-      <div class="inputContainer half">
+      <div class="inputContainer full">
         <label class="inputLabel">Guest Name<span style="font-size: 18px; margin: 0; color: red;">*</span></label>
         <input required type='text' class="textInput" id='guest-${x}-name' name='guest_name' placeholder='Guest Name' />
       </div>
 
       <div class="inputContainer half">
+        <label class="inputLabel">Guest Phone</label>
+        <input type='phone' class="textInput" id='guest-${x}-phone' name='phone' placeholder='Needed due to COVID19 Restrictions' />
+      </div>
+
+      <div class="inputContainer half">
+        <label class="inputLabel">Guest Email</label>
+        <input type='email' class="textInput" id='guest-${x}-email' name='email' placeholder='Needed due to COVID19 Restrictions' />
+      </div>
+
+      <div class="inputContainer full">
         <label class="inputLabel">Dietary Requirements</label>
         <input type='text' class="textInput" id='guest-${x}-diet-requirements' name='diet_requirements' placeholder='Vegetarian, Allergies etc...' />
       </div>
