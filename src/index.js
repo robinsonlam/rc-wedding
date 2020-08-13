@@ -57,32 +57,59 @@ $(document).ready(() => {
           let hostStatus = $(`#attending-select`).val();
           let promises = [];
   
-          for (let x = 0; x < numberOfGuests; x++) {
-            let guestName = $(`#guest-${x}-name`).val();
-            let guestDietRequirements = $(`#guest-${x}-diet-requirements`).val();
-            let guestSongSuggestion = $(`#guest-${x}-song-suggestions`).val();
-            let guestPhone = $(`#guest-${x}-phone`).val();
-            let guestEmail = $(`#guest-${x}-email`).val();
-            let formString = `your_name=${hostName}&status=${hostStatus}&email=${guestEmail}&phone=${guestPhone}&number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
-          console.log(formString);
-            
-            promises.push($.ajax({
+  
+
+          console.log(promises);
+
+          if (numberOfGuests === 1) {
+            let guestName = $(`#guest-0-name`).val();
+              let guestDietRequirements = $(`#guest-0-diet-requirements`).val();
+              let guestSongSuggestion = $(`#guest-0-song-suggestions`).val();
+              let guestPhone = $(`#guest-0-phone`).val();
+              let guestEmail = $(`#guest-0-email`).val();
+              let formString = `your_name=${hostName}&status=${hostStatus}&email=${guestEmail}&phone=${guestPhone}&number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
+              console.log('query:', formString);
+
+            $.ajax({
                 url: url,
                 method: "GET",
                 dataType: "json",
                 data: formString
-            }));
+            }).done((response) => {
+              console.log("response: ",response);
+              $('#submit-form-button').prop('disabled', false);
+              $('#submit-form-button').text('Submit Guests!');
+  
+              alert("Thank you for submitting your RSVP!")
+            })
+          } else {
+            for (let x = 0; x < numberOfGuests; x++) {
+              let guestName = $(`#guest-${x}-name`).val();
+              let guestDietRequirements = $(`#guest-${x}-diet-requirements`).val();
+              let guestSongSuggestion = $(`#guest-${x}-song-suggestions`).val();
+              let guestPhone = $(`#guest-${x}-phone`).val();
+              let guestEmail = $(`#guest-${x}-email`).val();
+              let formString = `your_name=${hostName}&status=${hostStatus}&email=${guestEmail}&phone=${guestPhone}&number_attending=${numberOfGuests || ''}&guest_name=${guestName || ''}&diet_requirements=${guestDietRequirements || ''}&song_suggestions=${guestSongSuggestion}`;
+              console.log('query:', formString);
+              
+              promises.push($.ajax({
+                  url: url,
+                  method: "GET",
+                  dataType: "json",
+                  data: formString
+              }));
+            }
+
+            $.when.apply($, promises).done(( [responses] ) => {
+              console.log("responses: ",responses);
+              $('#submit-form-button').prop('disabled', false);
+              $('#submit-form-button').text('Submit Guests!');
+  
+              alert("Thank you for submitting your RSVP!")
+            });
           }
 
-          console.log(promises);
-
-          $.when.apply($, promises).done(( [responses] ) => {
-            console.log("responses: ",responses);
-            $('#submit-form-button').prop('disabled', false);
-            $('#submit-form-button').text('Submit Guests!');
-
-            alert("Thank you for submitting your RSVP!")
-          });
+         
         }
     })
 
