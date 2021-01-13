@@ -26,7 +26,7 @@
     "fullpage.js": "^3.0.8",
     "jquery": "^3.5.0",
     "jquery-parallax.js": "^1.5.0",
-    "jquery-validation": "^1.19.2",
+    "jquery-validation": "^1.19.3",
     "popper.js": "^1.16.1",
     "rellax": "^1.12.1",
     "slick-carousel": "^1.8.1",
